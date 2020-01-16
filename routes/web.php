@@ -17,6 +17,10 @@ use Illuminate\Support\Facades\Route;
 Auth::routes();
 //++++++++++++++++ FRONTEND ++++++++++++++++++++
 Route::get('/', 'HomeController@index')->name('home');
+//search
+Route::get('search', 'ProductController@getSearch')->name('get.search');
+
+Route::get('search', ['as' =>'search','uses'=> 'ProductController@getSearch']);
 //nút chi tiết sản phẩm
 Route::get("product-detail/{id}",['as'=>'product-detail','uses'=>"ProductController@getDetailProduct"]);
 //chi tiết hình ảnh sản phẩm

@@ -56,9 +56,8 @@
                             </ul>
                         </div>
                         <div class="header-search">
-                            <form action="#">
-                                <input type="text" placeholder="My Search"/>
-                                <button type="button"><i class="fa fa-search"></i></button>
+                            <form  action="search">
+                                <input type="text" name="key" placeholder="Nhập sản phẩm cần tìm ..."/>
                             </form>
                         </div>
                     </div>

@@ -93,7 +93,9 @@
 @include('frontend.partials.navbar')
 {{-- ENDNAVBAR --}}
 <!-- LIST -->
-@yield('content')
+<div class="py-4">
+    @yield('content')
+</div>
 <!-- ENDLIST -->
 {{--FOOTER --}--}}
 @include('frontend.partials.footer')
