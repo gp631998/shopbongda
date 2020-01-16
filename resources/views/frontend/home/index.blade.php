@@ -1,11 +1,17 @@
 @extends('frontend.master')
 @section('content')
     <!-- SLIDESHOW -->
+    @if(session()->has('message'))
+        <div class="alert alert-success">
+            {{ session()->get('message') }}
+        </div>
+    @endif
     <div class="w3-content w3-display-container" style=".mySlides {display:none}">
         <img class="mySlides" src="upload\products\sl1.jpg" style="width:100%">
         <img class="mySlides" src="upload\products\sl2.jpg" style="width:100%">
         <img class="mySlides" src="upload\products\sl3.jpg" style="width:100%">
     </div>
+
 
     <script>
         var myIndex = 0;
@@ -23,9 +29,28 @@
             }
             x[myIndex - 1].style.display = "block";
             setTimeout(carousel, 2000); // Change image every 2 seconds
+
         }
+        // var myIndex1 = 0;
+        // carousel1();
+        // function carousel1() {
+        //     var i;
+        //     var x = document.getElementsByClassName("primary-img");
+        //     for (i = 0; i < x.length; i++) {
+        //         x[i].style.display = "none";
+        //     }
+        //     myIndex1++;
+        //     if (myIndex1> x.length) {
+        //         myIndex1 = 1
+        //     }
+        //     x[myIndex1 - 1].style.display = "block";
+        //     setTimeout(carousel1, 20); // Change image every 2 seconds
+        //
+        // }
+
     </script>
-    
+
+
     <!-- ENDSLIDESHOW -->
     <!-- Product AREA -->
     <div class="product-area">
