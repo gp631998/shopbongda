@@ -42,11 +42,12 @@
                                         <div class="col-md-4">
                                             <div class="single-product">
                                                 <div class="single-product-img">
-                                                    <a href="#">
-                                                        <img class="primary-img"
-                                                             src="{{url('/')}}/{{$product->product_image_intro}}"
-                                                             alt="product">
-                                                    </a>
+                                                    <a href="{{route('showDetail',$product->id)}}"><img class="primary-img" src="{{ asset('/'.$product->product_image_intro)}}"></a>
+{{--                                                    <a href="#">--}}
+{{--                                                        <img class="primary-img"--}}
+{{--                                                             src="{{url('/')}}/{{$product->product_image_intro}}"--}}
+{{--                                                             alt="product">--}}
+{{--                                                    </a>--}}
                                                 </div>
                                                 <div class="single-product-content">
                                                     <div class="product-content-left">
@@ -74,11 +75,12 @@
                                     <div class="col-md-4">
                                         <div class="single-product">
                                             <div class="single-product-img">
-                                                <a href="#">
-                                                    <img class="primary-img"
-                                                         src="{{url('/')}}/{{$product->product_image_intro}}"
-                                                         alt="product">
-                                                </a>
+                                                <a href="{{route('showDetail',$product->id)}}"><img class="primary-img" src="{{ asset('/'.$product->product_image_intro)}}"></a>
+{{--                                                <a href="#">--}}
+{{--                                                    <img class="primary-img"--}}
+{{--                                                         src="{{url('/')}}/{{$product->product_image_intro}}"--}}
+{{--                                                         alt="product">--}}
+{{--                                                </a>--}}
                                             </div>
                                             <div class="single-product-content">
                                                 <div class="product-content-left">
@@ -109,10 +111,11 @@
                                 <div class="col-md-4">
                                     <div class="single-product">
                                         <div class="single-product-img">
-                                            <a href="#">
-                                                <img class="primary-img"
-                                                     src="{{url('/')}}/{{$product->product_image_intro}}" alt="product">
-                                            </a>
+                                            <a href="{{route('showDetail',$product->id)}}"><img class="primary-img" src="{{ asset('/'.$product->product_image_intro)}}"></a>
+{{--                                            <a href="#">--}}
+{{--                                                <img class="primary-img"--}}
+{{--                                                     src="{{url('/')}}/{{$product->product_image_intro}}" alt="product">--}}
+{{--                                            </a>--}}
                                         </div>
                                         <div class="single-product-content">
                                             <div class="product-content-left">

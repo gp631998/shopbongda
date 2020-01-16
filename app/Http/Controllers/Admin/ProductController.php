@@ -99,32 +99,53 @@ class ProductController extends Controller
         return redirect(route('danh-sach-san-pham'));
     }
 
+
     function postAddImageProduct($product_id, Request $request)
     {
         $post = $request->all();
         $request->validate([
-            'product_image' => 'required',
+            'image' => 'required',
+
         ]);
         $productModel = Product::find($product_id);
         $modelGalleries = new Galleries();
-        if ($productModel->save()) {
-            if ($request->hasFile('product_image')) {
-                $file = $request->product_image;
-                // nếu cần validate file upload lên thì sử dụng mấy biến này
-                $file_name = $file->getClientOriginalName();
-                $extension_file = $file->getClientOriginalExtension();
-                $temp_file = $file->getRealPath();
-                $file_size = $file->getSize();
-                $file_type = $file->getMimeType();
-                $random = random_int(10000, 50000);
-                $file->move('upload/products', $random . $file->getClientOriginalName());
-                $modelGalleries->product_id = $product_id;
-                $modelGalleries->image = "upload/products/".$random.$file->getClientOriginalName();
-                $modelGalleries->save();
+
+//        if ($productModel->save()) {
+//            if ($request->hasFile('image')) {
+//                $file = $request->image;
+//                // nếu cần validate file upload lên thì sử dụng mấy biến này
+//                $file_name = $file->getClientOriginalName();
+//                $extension_file = $file->getClientOriginalExtension();
+//                $temp_file = $file->getRealPath();
+//                $file_size = $file->getSize();
+//                $file_type = $file->getMimeType();
+//                $random = random_int(10000, 50000);
+//                $file->move('upload/products', $random . $file->getClientOriginalName());
+//                $productModel->product_image_intro = "upload/products/" . $random . $file->getClientOriginalName();
+//                $productModel->save();
+//            }
+//        }
+        if ($request->hasFile('image') && $request->hasFile('image1')) {
+            if($request->file('image')->isValid()&&$request->file('image')->isValid()) {
+                try {
+                    $modelGalleries->product_id=$productModel->id;
+                    $file = $request->file('image');
+                    $name = rand(11111, 99999) . '.' . $file->getClientOriginalExtension();
+                    $modelGalleries->image= $request->file('image')->move("upload/products", $name);
+                    $file1 = $request->file('image1');
+                    $name1 = rand(11111, 99999) . '.' . $file1->getClientOriginalExtension();
+                    $modelGalleries->image1= $request->file('image1')->move("upload/products", $name1);
+                    $modelGalleries->save();
+                    return redirect(route('list-image',['product_id'=>$product_id,'modelGalleries'=>$modelGalleries]));
+                } catch (\Exception $e) {
+              dd('ban sai');
+                }
             }
-            return redirect(route('list-image', $product_id));
         }
+
+
     }
+
     function postEditProduct($id, Request $request)
     {
         $post = $request->all();

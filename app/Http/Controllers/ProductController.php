@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Category;
+use App\Galleries;
 use App\Product;
 use DB;
 use Illuminate\Http\Request;
@@ -12,7 +13,8 @@ class ProductController extends Controller
     //
     public function getDetailProduct($id,Request $request){
         $product=Product::find($id);
-        return view('frontend.detail.product',compact('product'));
+        $detailGall=Galleries::where('product_id',$id)->first();
+        return view('frontend.detail.product',compact('product','detailGall'));
     }
     public function getProductsById($id,Request $request){
         $products=DB::table('products')->where('category_id','=',$id)->orderBy('sale_price')->get();
@@ -26,4 +28,8 @@ class ProductController extends Controller
 
         return view('frontend.search.search', compact('search'));
     }
+//    public function getShow($id){
+//        $show =Product::find($id);
+//
+//    }
 }

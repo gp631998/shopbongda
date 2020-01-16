@@ -11,15 +11,22 @@
             </div>
         @endif
         <form action="{{route('post-add-image-product',$product->id)}}" method="post" enctype="multipart/form-data">
+            @csrf
             <table class="table table-bordered">
                 <tr>
                     <th>Product name</th>
-                    <th><input readonly type="text" class="form-control" value="{{$product->product_name}}" name="product_name"></th>
+                    <th><input readonly type="text" class="form-control" value="{{$product->id}}" name="product_id"></th>
                 </tr>
                 <tr>
                     <th>Product image</th>
                     <th>
-                        <input type="file" class="form-control" name="product_image">
+                        <input type="file" class="form-control" name="image">
+                    </th>
+                </tr>
+                <tr>
+                    <th>Product image 1</th>
+                    <th>
+                        <input type="file" class="form-control" name="image1">
                     </th>
                 </tr>
 

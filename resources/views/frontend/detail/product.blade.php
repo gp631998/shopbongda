@@ -9,19 +9,13 @@
                         <div class="col-md-7 col-sm-7">
                             <div class="product-item-tab">
                                 <!-- Tab panes -->
-                                <div class="single-tab-content">
-                                    <div class="tab-content">
-                                        <div role="tabpanel" class="tab-pane active" id="img-one"><img src="assets/frontend/img/single-product/Single-product-1.jpg" alt="tab-img"></div>
-                                        <div role="tabpanel" class="tab-pane" id="img-two"><img src="assets/frontend/img/single-product/Single-product-2.jpg" alt="tab-img"></div>
-                                        <div role="tabpanel" class="tab-pane" id="img-three"><img src="assets/frontend/img/single-product/Single-product-2.jpg" alt="tab-img"></div>
-                                    </div>
-                                </div>
                                 <!-- Nav tabs -->
                                 <div class="single-tab-img">
                                     <ul class="nav nav-tabs" role="tablist">
-                                        <li role="presentation" class="active"><a href="#img-one" role="tab" data-toggle="tab"><img src="assets/frontend/img/single-product/s1.jpg" alt="tab-img"></a></li>
-                                        <li role="presentation"><a href="#img-two" role="tab" data-toggle="tab"><img src="assets/frontend/img/single-product/s2.jpg" alt="tab-img"></a></li>
-                                        <li role="presentation" class="tab-last-li"><a href="#img-three" role="tab" data-toggle="tab"><img src="assets/frontend/img/single-product/s3.jpg" alt="tab-img"></a></li>
+
+                                     <li role="presentation" class="active"><a href="#img-one" role="tab" data-toggle="tab"><img style="width: 100%" class="product-image-intro" src="{{ asset('/'.$product->product_image_intro)}}"></a></li><br>
+                                        <li role="presentation"><a href="#img-two" role="tab" data-toggle="tab"><img style="width: 30%" src="{{ asset('/'.$detailGall->image)}}" alt="tab-img"></a></li>
+                                        <li role="presentation" class="tab-last-li"><a href="#img-three" role="tab" data-toggle="tab"><img style="width: 30%"  src="{{ asset('/'.$detailGall->image1)}}" alt="tab-img"></a></li>
                                     </ul>
                                 </div>
                             </div>
