@@ -108,23 +108,8 @@ class ProductController extends Controller
 
         ]);
         $productModel = Product::find($product_id);
+        $d=Galleries::all();
         $modelGalleries = new Galleries();
-
-//        if ($productModel->save()) {
-//            if ($request->hasFile('image')) {
-//                $file = $request->image;
-//                // nếu cần validate file upload lên thì sử dụng mấy biến này
-//                $file_name = $file->getClientOriginalName();
-//                $extension_file = $file->getClientOriginalExtension();
-//                $temp_file = $file->getRealPath();
-//                $file_size = $file->getSize();
-//                $file_type = $file->getMimeType();
-//                $random = random_int(10000, 50000);
-//                $file->move('upload/products', $random . $file->getClientOriginalName());
-//                $productModel->product_image_intro = "upload/products/" . $random . $file->getClientOriginalName();
-//                $productModel->save();
-//            }
-//        }
         if ($request->hasFile('image') && $request->hasFile('image1')) {
             if($request->file('image')->isValid()&&$request->file('image')->isValid()) {
                 try {

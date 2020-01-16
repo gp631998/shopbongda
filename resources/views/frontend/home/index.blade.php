@@ -25,8 +25,7 @@
             setTimeout(carousel, 2000); // Change image every 2 seconds
         }
     </script>
-
-    </body>
+    
     <!-- ENDSLIDESHOW -->
     <!-- Product AREA -->
     <div class="product-area">
