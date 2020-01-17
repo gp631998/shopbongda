@@ -18,13 +18,13 @@
                 <tr>
                     <td>{{$order->id}}</td>
                     <td>{{$order->order_name}}</td>
-                    <td>Customer name</td>
+                    <td>{{$order->customer_id}}</td>
                     <td>{{$order->status}}</td>
                     <td>{{$order->total}}</td>
                     <td><a href="{{route('chi-tiet-don-hang',$order->id)}}" class="btn btn-primary">Xem</a></td>
                     <td>
                         <a href="" class="btn btn-primary">Edit</a>
-                        <a href="{{route('xoa-don-hang',$order->id)}}" class="btn btn-primary">Delete</a>
+                        <a onclick="return confirm('mày có muốn xóa không?')" href="{{route('xoa-don-hang',$order->id)}}" class="btn btn-primary">Delete</a>
                     </td>
                 </tr>
             @endforeach

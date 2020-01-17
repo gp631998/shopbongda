@@ -59,7 +59,7 @@
                 <div class="col-md-12 col-sm-4">
                     <div class="product-items-area">
                         <div class="product-items">
-                            <h2 class="product-header">ÁO CÂU LẠC BỘ</h2>
+                            <h2 class="product-header" style="text-align: center">ÁO CÂU LẠC BỘ</h2>
                             <div class="row">
                                 <div id="product-slider" class="owl-carousel">
                                     @foreach($aoclb_products as $product)
@@ -92,7 +92,7 @@
                         </div>
                     </div>
                     <div class="product-items">
-                        <h2 class="product-header">ÁO ĐỘI TUYỂN</h2>
+                        <h2 class="product-header" style="text-align: center">ÁO ĐỘI TUYỂN</h2>
                         <div class="row">
                             <div id="product-slider-women" class="owl-carousel">
                                 @foreach($aodoituyen_products as $product)
@@ -128,7 +128,7 @@
                                       alt="arrivals"> </a>
                 </div>
                 <div class="product-items">
-                    <h2 class="product-header">ÁO LOGO</h2>
+                    <h2 class="product-header" style="text-align: center">ÁO LOGO</h2>
                     <div class="row">
                         <div id="product-slider-women" class="owl-carousel">
                             @foreach($aologo_products as $product)

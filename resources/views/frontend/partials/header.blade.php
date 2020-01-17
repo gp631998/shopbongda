@@ -31,9 +31,9 @@
                     <div class="header-top-right">
                         <ul class="list-inline">
                             <li><a href="#"><i class="fa fa-user"></i>My Account</a></li>
-                            <li><a href="checkout.html"><i class="fa fa-check-square-o"></i>Checkout</a></li>
-                            <li><a href="#"><i class="fa fa-lock"></i>Login</a></li>
-                            <li><a href="#"><i class="fa fa-pencil-square-o"></i>Register</a></li>
+                            <li><a href="{{route('logout')}}"><i class="fa fa-check-square-o"></i>Checkout</a></li>
+                            <li><a href="{{route('login')}}"><i class="fa fa-lock"></i>Login</a></li>
+                            <li><a href="{{route('register')}}"><i class="fa fa-pencil-square-o"></i>Register</a></li>
                         </ul>
                     </div>
                 </div>
@@ -45,7 +45,7 @@
             <div class="row">
                 <div class="col-md-2 col-sm-2 col-xs-12">
                     <div class="header-logo">
-                        <a href="{{route('home')}}"><img src="assets/frontend/img/logo.png" alt="logo"></a>
+                        <a href="{{route('home')}}"><img src="{{asset('assets/frontend/img/logo.png')}}" alt="logo"></a>
                     </div>
                 </div>
                 <div class="col-md-10 col-sm-10 col-xs-12">

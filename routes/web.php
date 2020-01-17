@@ -103,4 +103,10 @@ Route::group(['prefix'=>'admin','namespace'=>"Admin","middleware"=>"auth"],funct
         //root/admin/danh-muc/xoa-don-hang
         Route::get("xoa-don-hang/{id}", ['as' => 'xoa-don-hang', 'uses' => 'OrderController@getDeleteOrder']);
     });
+    //đăng nhập các thứ
+    Route::get('/', 'Homecontroller@home');
+    Route::post('/login', 'UserController@postlogin');
+    Route::get('/logout', 'UserController@logout');
+
+    Route::get('/admin', 'UserController@admin');
 });

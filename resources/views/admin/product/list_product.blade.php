@@ -33,7 +33,7 @@
                     <td>{{$product->description}}</td>
                     <th nowrap="">
                         <a href="{{route('sua-san-pham',$product->id)}}" class="btn btn-primary">Edit</a>
-                        <a href="{{route('xoa-san-pham',$product->id)}}" class="btn btn-danger">Delete</a>
+                        <a onclick="return confirm('mày có muốn xóa không?')" href="{{route('xoa-san-pham',$product->id)}}" class="btn btn-danger">Delete</a>
                         <a href="{{route('list-image',$product->id)}}" class="btn btn-info">Gallery</a>
                     </th>
                 </tr>
