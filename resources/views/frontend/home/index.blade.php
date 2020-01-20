@@ -66,7 +66,7 @@
                                         <div class="col-md-4">
                                             <div class="single-product">
                                                 <div class="single-product-img">
-                                                    <a href="{{route('showDetail',$product->id)}}"><img class="primary-img" src="{{ asset('/'.$product->product_image_intro)}}"></a>
+                                                    <a  href="{{route('showDetail',$product->id)}}"><img class="primary-img" src="{{ asset('/'.$product->product_image_intro)}}"></a>
 {{--                                                    <a href="#">--}}
 {{--                                                        <img class="primary-img"--}}
 {{--                                                             src="{{url('/')}}/{{$product->product_image_intro}}"--}}

@@ -20,6 +20,9 @@ Route::get('/', 'HomeController@index')->name('home');
 //search
 Route::get('search', 'ProductController@getSearch')->name('get.search');
 
+//feed
+Route::get('feedback', 'FeedbackController@index')->name('Feedback');
+Route::get('feedback/add', 'FeedbackController@addFeedback')->name('AddFeedback');
 Route::get('search', ['as' =>'search','uses'=> 'ProductController@getSearch']);
 //xoa galery
 Route::get("xoa-galery/{id}", ['as' => 'xoa-galery', 'uses' => 'ProductController@xoaGalery']);

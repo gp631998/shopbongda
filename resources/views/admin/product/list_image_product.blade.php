@@ -21,7 +21,7 @@
                     <td nowrap><img style="width: 100px" class="product-image" src="{{ asset('/'.$image->image)}}"></td>
                     <td nowrap><img style="width: 100px" class="product-image" src="{{ asset('/'.$image->image1)}}"></td>
                     <th nowrap>
-                        <a href="{{'xoa-san-pham',$product->id}}" class="btn btn-primary">Delete</a>
+                        <a href="{{'xoa-galery',$product->id}}" class="btn btn-primary">Delete</a>
                     </th>
                 </tr>
             @endforeach
