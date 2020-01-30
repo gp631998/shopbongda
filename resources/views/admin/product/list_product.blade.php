@@ -23,7 +23,7 @@
                     <td>{{$product->id}}</td>
                     <td nowrap="">{{$product->product_name}}</td>
                     <td><a href="{{route('showDetail',$product->id)}}"><img class="product-image-intro" src="{{ asset('/'.$product->product_image_intro)}}"></a></td>
-                    <td nowrap=""></td>
+
                     <td nowrap="">{{$product->publish}}</td>
                     <td nowrap="">{{$product->category_id}}</td>
                     <td nowrap="">{{$product->ordering}}</td>
