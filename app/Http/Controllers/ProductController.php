@@ -6,6 +6,7 @@ use App\Category;
 use App\Comment;
 use App\Galleries;
 use App\Product;
+use App\User;
 use DB;
 use Illuminate\Http\Request;
 
@@ -16,7 +17,8 @@ class ProductController extends Controller
     {
         $product = Product::findOrFail($id);
         $comments = $product->comments;
-        $detailGall = Galleries::where('product_id', $id)->first();
+        $detailGall = $product->gallery;
+
         return view('frontend.detail.product', compact('product', 'detailGall', 'comments'));
     }
 

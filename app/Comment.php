@@ -9,7 +9,8 @@ class Comment extends Model
     public $timestamps = false;
     protected $fillable = [
         'product_id',
-        'body'
+        'body',
+        'user_id'
     ];
 
     public function product()
