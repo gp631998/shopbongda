@@ -108,20 +108,20 @@ class ProductController extends Controller
 
         ]);
         $productModel = Product::find($product_id);
-        $d=Galleries::all();
+        $d = Galleries::all();
         $modelGalleries = new Galleries();
         if ($request->hasFile('image') && $request->hasFile('image1')) {
-            if($request->file('image')->isValid()&&$request->file('image')->isValid()) {
+            if ($request->file('image')->isValid() && $request->file('image')->isValid()) {
                 try {
-                    $modelGalleries->product_id=$productModel->id;
+                    $modelGalleries->product_id = $productModel->id;
                     $file = $request->file('image');
                     $name = rand(11111, 99999) . '.' . $file->getClientOriginalExtension();
-                    $modelGalleries->image= $request->file('image')->move("upload/products", $name);
+                    $modelGalleries->image = $request->file('image')->move("upload/products", $name);
                     $file1 = $request->file('image1');
                     $name1 = rand(11111, 99999) . '.' . $file1->getClientOriginalExtension();
-                    $modelGalleries->image1= $request->file('image1')->move("upload/products", $name1);
+                    $modelGalleries->image1 = $request->file('image1')->move("upload/products", $name1);
                     $modelGalleries->save();
-                    return redirect(route('list-image',['product_id'=>$product_id,'modelGalleries'=>$modelGalleries]));
+                    return redirect(route('list-image', ['product_id' => $product_id, 'modelGalleries' => $modelGalleries]));
                 } catch (\Exception $e) {
 
                 }
