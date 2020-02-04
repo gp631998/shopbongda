@@ -15,9 +15,7 @@
 
     <!-- Favicon
     ============================================ -->
-    <link rel="shortcut icon" type="image/x-icon" href="{{asset('assets/frontend/img/favicon.jpg')}}">
-    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('assets/frontend/img/logo.png') }}">
-    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('assets/frontend/img/footer-logo.png') }}">
+    <link rel="shortcut icon" type="image/x-icon" href="{{asset('assets/frontend/img/logoaobongda.png')}}">
     <!-- Fonts
     ============================================ -->
     <link href='https://fonts.googleapis.com/css?family=Raleway:400,700,600,500,300,800,900' rel='stylesheet' type='text/css'>
@@ -93,7 +91,9 @@
 @include('frontend.partials.navbar')
 {{-- ENDNAVBAR --}}
 <!-- LIST -->
-@yield('content')
+<div class="py-4">
+    @yield('content')
+</div>
 <!-- ENDLIST -->
 {{--FOOTER --}--}}
 @include('frontend.partials.footer')
@@ -101,7 +101,8 @@
 
 
 <!-- JS -->
-
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <!-- jquery-1.11.3.min js
 ============================================ -->
 <script type="text/javascript" src="{{ asset('assets/frontend/js/vendor/jquery-1.11.3.min.js') }}"></script>

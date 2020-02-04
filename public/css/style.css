@@ -224,112 +224,19 @@ body{
 .header-search button:hover{
 	background: #062F3C none repeat scroll 0 0;
 }
-.header-chart{
-	float: left;
-	margin-left: 40px;
+.header-bottom .linkCart{
+    border: 1px solid #8C0F11;
+    border-radius: 10px;
+    background-color: #C81518;
+    padding: 10px 20px;
+    color: white;
+    text-decoration: none;
 }
-.header-chart ul{
-	background: #ffa726 none repeat scroll 0 0;
-	border-radius: 2px;
-}
-.header-chart ul li{
-	border-right:1px solid #fff;
-}
-.header-chart ul li a{
-	color: #fff;
-	display: block;
-	font-size: 14px;
-	padding: 7px 7px 8px;
-}
-.header-chart ul li:last-child{
-	border-right:0px;
-}
-.header-chart ul li a:hover{}
-.header-chart .chart-li{
-	text-transform:uppercase;
-	font-weight:600;
-}
-.header-chart ul ul {
-	position: relative;
-	right: 0px;
-	top: 100%;
-	transform: scaleY(0);
-	transition: all .5s ease 0s;
-	z-index: 999999;
-	background:#fff;
-	padding: 0 20px;
-}
-.dropdown-chart-left a{
-	border: 1px solid #e8e8e8;
-}
-.header-chart-dropdown{
-	background: #fff none repeat scroll 0 0;
-	border-radius: 2px;
-	padding: 10px 20px;
-	position: absolute;
-	right: -81px;
-	top: 0;
-	width: 300px;
-}
-.header-chart-dropdown-list{
-	border-bottom: 1px solid #ccc;
-	padding: 20px 0 30px;
-}
-.dropdown-chart-left{
-	margin-right:20px;
-}
-.dropdown-chart-right{}
-.dropdown-chart-right h2{
-	font-size: 14px;
-	margin-top: 0;
-	text-transform: uppercase;
-	font-weight:700;
-	color:#000;
-}
-.dropdown-chart-right h2 a{
-	color: #000 !important;
-	font-size: 12px !important;
-	padding: 0 !important;
-}
-.dropdown-chart-right h2 a:hover{
-	color: #FFA726 !important;
-}
-.dropdown-chart-right h3{
-	font-size: 12px;
-}
-.dropdown-chart-right h4{
-	font-size: 14px;
-	font-weight:700;
-	color:#000;
-}
-.header-chart ul:hover ul{
-    transform: scaleY(1);
-}
-.chart-checkout p{
-	background: #ffa726 none repeat scroll 0 0;
-	border-radius: 2px;
-	color: #fff;
-	font-weight: 700;
-	margin-top: 20px;
-	padding: 6px 10px;
-}
-.chart-checkout span{
-	float:right;
-}
-.chart-checkout button{
-	background: #062F3C none repeat scroll 0 0;
-	border: medium none;
-	border-radius: 2px;
-	color: #fff;
-	font-weight: 700;
-	margin: 5px 0 10px;
-	text-transform: uppercase;
-	width: 100%;
-	transition: all .3s;
-}
-.chart-checkout button:hover{
-	background: #ffa726 none repeat scroll 0 0;
-	color: #fff;
+.header-bottom .linkCart .numbCart #countCart{
+    width: 15px;
+    background-color: #C81518;
+    color: white;
+    cursor: pointer;
 }
 /* ----------------------------
 3. Main-Menu-area

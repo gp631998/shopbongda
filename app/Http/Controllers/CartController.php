@@ -50,6 +50,7 @@ class CartController extends Controller
                     'product_id' => $item->id,
                     'order_id' => $order_id,
                     'product_name' => $item->name,
+                    'product_size' => $item->size,
                     'product_price' => $item->price,
                     'product_qty' => $item->qty,
                 )
@@ -63,6 +64,7 @@ class CartController extends Controller
         $product=Product::find($id);
         $post=$request->all();
         $price=$product->price;
+//        $size=$product->size;
         Cart::add($id,$product->product_name,$post['quality'],$price);
         return redirect(route('gio-hang'));
     }

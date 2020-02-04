@@ -32,6 +32,6 @@ class OrderController extends Controller
     public function getDeleteOrder($id,Request $request){
         $orders=Orders::find($id);
         $orders->delete();
-        return redirect(route('list-danh-muc'));
+        return redirect(route('list-don-hang'));
     }
 }

@@ -6,9 +6,9 @@
                 <div class="col-md-3 col-sm-12">
                     <div class="footer-info-card">
                         <div class="footer-logo">
-                            <a href="{{route('home')}}"><img src="assets/frontend/img/footer-logo.png" alt="logo"></a>
+                            <a href="{{route('home')}}"><img src="{{asset('assets/frontend/img/logoaobongda.png')}}" alt="logo"></a>
                         </div>
-                        <p>Hệ thống bán lẻ đồ thể thao Sporter là đơn vị chuyên sản xuất và phân phối các sản phẩm thể thao chuyên nghiệp. Tại đây bạn có thể dễ dàng mua Quần áo và dụng cụ thể thao chất lượng cao, chính hãng</p>
+                        <p>Hệ thống bán lẻ đồ thể thao aobongda là đơn vị chuyên sản xuất và phân phối các sản phẩm thể thao chuyên nghiệp. Tại đây bạn có thể dễ dàng mua Quần áo và dụng cụ thể thao chất lượng cao, chính hãng</p>
                     </div>
                 </div>
                 <div class="col-md-3 col-sm-6 hidden-sm hidden-xs">

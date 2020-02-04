@@ -38,10 +38,15 @@ Route::post("gioi-thieu",['as'=>'gioi-thieu','uses'=>"CartController@removeItemC
 Route::post("lien-he",['as'=>'lien-he','uses'=>"CartController@removeItemCart"]);
 //TODO làm sau
 Route::get("danh-muc/{id}",['as'=>'danh-muc','uses'=>"ProductController@getProductsById"]);
-//Search
+//search
 Route::get('search', 'ProductController@getSearch')->name('get.search');
 Route::get('search', ['as' =>'search','uses'=> 'ProductController@getSearch']);
-
+//xoa galery
+Route::get("xoa-galery/{id}", ['as' => 'xoa-galery', 'uses' => 'ProductController@xoaGalery']);
+Route::get('showDetail/{id}', ['as' =>'showDetail','uses'=> 'ProductController@getDetailProduct']);
+//feedback
+Route::get('feedback', 'FeedbackController@index')->name('Feedback');
+Route::get('feedback/add', 'FeedbackController@addFeedback')->name('AddFeedback');
 
 
 //++++++++++++++++ BACKEND +++++++++++++++++++++

@@ -10,6 +10,7 @@
                             <tr>
                                 <th class="th-product">Product</th>
                                 <th class="th-qty">Qty</th>
+                                <th class="th-price">Size</th>
                                 <th class="th-price">Price</th>
                                 <th class="th-total">Total</th>
                                 <th class="th-delete">Delete</th>
@@ -24,6 +25,7 @@
                                     <td class="th-qty">
                                         {{$item->qty}}
                                     </td>
+                                    <td class="th-size">{{$item->size}}</td>
                                     <td class="th-price">{{$item->price}}</td>
                                     <td class="th-total">{{$item->price*$item->qty}}</td>
                                     <td class="th-delete">
@@ -37,7 +39,7 @@
                             @endforeach
                             <tfoot>
                             <tr>
-                                <td colspan="4">Sub total</td>
+                                <td colspan="5">Sub total</td>
                                 <td>{{Cart::Subtotal()}}</td>
                             </tr>
                             </tfoot>

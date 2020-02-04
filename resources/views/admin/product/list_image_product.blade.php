@@ -5,18 +5,23 @@
         <table class="table table-bordered">
             <thead>
             <tr>
-                <th>Id</th>
+                <th>Product_id</th>
+
                 <th>Image</th>
+                <th>Image1</th>
+
                 <th><a href="{{route('add-image-product',$product->id)}}" class="btn btn-primary">Add new</a></th>
             </tr>
             </thead>
             <tbody>
             @foreach($list_image as $image)
                 <tr>
-                    <td>{{$image->id}}</td>
-                    <td nowrap><img style="width: 100px" class="product-image" src="{{url('/')}}/{{$image->image}}"></td>
+                    <td>{{$image->product_id}}</td>
+
+                    <td nowrap><img style="width: 100px" class="product-image" src="{{ asset('/'.$image->image)}}"></td>
+                    <td nowrap><img style="width: 100px" class="product-image" src="{{ asset('/'.$image->image1)}}"></td>
                     <th nowrap>
-                        <a href="#" class="btn btn-primary">Delete</a>
+                        <a href="{{'xoa-san-pham',$product->id}}" class="btn btn-primary">Delete</a>
                     </th>
                 </tr>
             @endforeach
