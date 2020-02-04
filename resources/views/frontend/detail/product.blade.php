@@ -57,7 +57,7 @@
                                             </select>
                                         </div>
                                         <button style="margin-top: 10px" type="submit" class="btn btn-primary"><i
-                                                class="fas fa-cart-plus"></i> Thêm hànga
+                                                class="fas fa-cart-plus"></i> Thêm hàng 12
                                         </button>
                                     </div>
                                 </div>
