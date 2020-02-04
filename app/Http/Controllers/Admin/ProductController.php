@@ -123,7 +123,7 @@ class ProductController extends Controller
                     $modelGalleries->save();
                     return redirect(route('list-image',['product_id'=>$product_id,'modelGalleries'=>$modelGalleries]));
                 } catch (\Exception $e) {
-              dd('ban sai');
+
                 }
             }
         }

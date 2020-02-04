@@ -10,4 +10,7 @@ class Product extends Model
         $data=DB::table('products')->where('product_name','=',$keyword)->get();
         return $data;
     }
+    public function comments(){
+        return $this ->hasMany('App\Comment');
+    }
 }

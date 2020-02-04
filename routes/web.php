@@ -27,6 +27,7 @@ Route::get('search', ['as' =>'search','uses'=> 'ProductController@getSearch']);
 //xoa galery
 Route::get("xoa-galery/{id}", ['as' => 'xoa-galery', 'uses' => 'ProductController@xoaGalery']);
 Route::get('showDetail/{id}', ['as' =>'showDetail','uses'=> 'ProductController@getDetailProduct']);
+Route::post('showDetail/{id}','CommentController@comment')->name('post.comment');
 //nút chi tiết sản phẩm
 Route::get("product-detail/{id}",['as'=>'product-detail','uses'=>"ProductController@getDetailProduct"]);
 //chi tiết hình ảnh sản phẩm
@@ -109,6 +110,7 @@ Route::group(['prefix'=>'admin','namespace'=>"Admin","middleware"=>"auth"],funct
     //đăng nhập các thứ
     Route::get('/', 'Homecontroller@home');
     Route::post('/login', 'UserController@postlogin');
+
     Route::get('/logout', 'UserController@logout');
 
     Route::get('/admin', 'UserController@admin');

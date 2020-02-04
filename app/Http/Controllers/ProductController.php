@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Category;
+use App\Comment;
 use App\Galleries;
 use App\Product;
 use DB;
@@ -13,10 +14,23 @@ class ProductController extends Controller
     //
     public function getDetailProduct($id, Request $request)
     {
-        $product = Product::find($id);
+        $product = Product::findOrFail($id);
+        $comments = $product->comments;
         $detailGall = Galleries::where('product_id', $id)->first();
-        return view('frontend.detail.product', compact('product', 'detailGall'));
+        return view('frontend.detail.product', compact('product', 'detailGall', 'comments'));
     }
+
+//    public function DetailProduct($id, Request $request)
+//    {
+//        $product = Product::findOrFail($id);
+//        $comments = $product->comments;
+//        $detailGall = Galleries::where('product_id', $id)->first();
+//        Comment::create([
+//            'product_id' => $product->id,
+//            'body' => $request->body,
+//        ]);
+//        return view('frontend.detail.product', compact('product', 'detailGall', 'comments'));
+//    }
 
     public function getProductsById($id, Request $request)
     {
