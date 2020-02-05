@@ -9,7 +9,7 @@ use App\Http\Controllers\Controller;
 
 class CommentController extends Controller
 {
-    public function getDeleteComment($id,CommentRequest $request){
+    public function getDeleteComment($id){
         $comments=Comment::find($id);
         $comments->delete();
         return redirect(route('list-comment'));

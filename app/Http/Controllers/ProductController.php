@@ -22,17 +22,6 @@ class ProductController extends Controller
         return view('frontend.detail.product', compact('product', 'detailGall', 'comments'));
     }
 
-//    public function DetailProduct($id, Request $request)
-//    {
-//        $product = Product::findOrFail($id);
-//        $comments = $product->comments;
-//        $detailGall = Galleries::where('product_id', $id)->first();
-//        Comment::create([
-//            'product_id' => $product->id,
-//            'body' => $request->body,
-//        ]);
-//        return view('frontend.detail.product', compact('product', 'detailGall', 'comments'));
-//    }
 
     public function getProductsById($id, Request $request)
     {

@@ -23,4 +23,5 @@ class CommentController extends Controller
         return back()->with('thongbao','Bình luận thành công,cảm ơn bạn dã phản hồi !!!!!!');
 //        return view('frontend.detail.product', compact('product', 'detailGall', 'comments'))->with('thongbao', 'Bình luận thành công');
     }
+
 }

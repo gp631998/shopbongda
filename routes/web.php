@@ -104,7 +104,7 @@ Route::group(['prefix'=>'admin','namespace'=>"Admin","middleware"=>"auth"],funct
         Route::get("chi-tiet-don-hang/{id}", ['as'=>'chi-tiet-don-hang','uses'=>"OrderController@getOrderDetail"]);
         //root/admin/danh-muc/chi-tiet-don-hang
         Route::post("update-order/{id}", ['as' => 'post-edit-order', 'uses' => 'OrderController@updateOrder']);
-        //root/admin/danh-muc/xoa-don-hang
+        //root/admin/danh-muc/xoa-don-ha
         Route::get("xoa-don-hang/{id}", ['as' => 'xoa-don-hang', 'uses' => 'OrderController@getDeleteOrder']);
     });
     Route::group(['prefix' => 'comment'], function (){
@@ -112,7 +112,7 @@ Route::group(['prefix'=>'admin','namespace'=>"Admin","middleware"=>"auth"],funct
         Route::get("list-comment", ['as'=>'list-comment','uses'=>"CommentController@getComment"]);
 
         //root/admin/danh-muc/xoa-don-hang
-        Route::get("xoa-comment/{id}", ['as' => 'xoa-comment', 'uses' => 'CommentController@getDeleteComment']);
+        Route::get('xoa-comment/{id}','CommentController@getDeleteComment')->name('xoa-comment');
     });
     //đăng nhập các thứ
     Route::get('/', 'Homecontroller@home');
