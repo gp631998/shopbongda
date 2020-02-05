@@ -17,7 +17,7 @@
             @foreach($orders as $order)
                 <tr>
                     <td>{{$loop->iteration}}</td>
-                    <td>{{$order->customer->first_name ."".$order->customer->last_name}}</td>
+                    <td>{{$order->customer->first_name ." ".$order->customer->last_name}}</td>
                     <td>{{$order->status}}</td>
                     <td>{{$order->total}}</td>
                     <td><a href="{{route('chi-tiet-don-hang',$order->id)}}" class="btn btn-primary">Xem</a></td>
