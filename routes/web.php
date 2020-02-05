@@ -107,6 +107,13 @@ Route::group(['prefix'=>'admin','namespace'=>"Admin","middleware"=>"auth"],funct
         //root/admin/danh-muc/xoa-don-hang
         Route::get("xoa-don-hang/{id}", ['as' => 'xoa-don-hang', 'uses' => 'OrderController@getDeleteOrder']);
     });
+    Route::group(['prefix' => 'comment'], function (){
+        //root/admin/danh-muc/list-don-hang
+        Route::get("list-comment", ['as'=>'list-comment','uses'=>"CommentController@getComment"]);
+
+        //root/admin/danh-muc/xoa-don-hang
+        Route::get("xoa-comment/{id}", ['as' => 'xoa-comment', 'uses' => 'CommentController@getDeleteComment']);
+    });
     //đăng nhập các thứ
     Route::get('/', 'Homecontroller@home');
     Route::post('/login', 'UserController@postlogin');
