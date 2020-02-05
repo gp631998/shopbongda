@@ -74,7 +74,7 @@
                                         {{$product->description}}
                                     </div>
                                 </div>
-                                <div style="color: #ff5c4d" class="well">
+                                <div style="color: #7dff38" class="well">
                                     @if(session('thongbao'))
                                         {{session('thongbao')}}
                                     @endif
@@ -105,7 +105,7 @@
                                     <div role="tabpanel" class="form-inline" id="description">
                                         <ul>
                                             @foreach($comments as $comment)
-                                                <li> <b style="color: red">{{$comment->user->name}}</b> : {!! $comment->body !!}</li>
+                                                <li> <b style="color: red;font-size: 20px">{{$comment->user->name}}</b> : {!! $comment->body !!}</li>
                                             @endforeach
                                         </ul>
                                     </div>
