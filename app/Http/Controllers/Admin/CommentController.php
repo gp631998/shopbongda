@@ -3,12 +3,13 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Comment;
+use App\Http\Requests\CommentRequest;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 class CommentController extends Controller
 {
-    public function getDeleteComment($id,Request $request){
+    public function getDeleteComment($id,CommentRequest $request){
         $comments=Comment::find($id);
         $comments->delete();
         return redirect(route('list-comment'));

@@ -5,9 +5,9 @@
             <thead>
             <tr>
                 <th>STT</th>
-                <th>User Id</th>
+                <th>User Name</th>
                 <th>Product Id</th>
-                <th>Body</th>
+                <th>Comment</th>
                 <th>Status</th>
             </tr>
             </thead>

@@ -74,11 +74,15 @@
                                         {{$product->description}}
                                     </div>
                                 </div>
-
-                                <div class="well">
+                                <div style="color: #ff5c4d" class="well">
                                     @if(session('thongbao'))
                                         {{session('thongbao')}}
                                     @endif
+                                </div>
+                                <div class="well">
+{{--                                    @if(session('thongbao'))--}}
+{{--                                        {{session('thongbao')}}--}}
+{{--                                    @endif--}}
                                     <h4>Viết bình luận ...<span class="glyphicon glyphicon-pencil"></span> </h4>
                                     <form action="" method="post" role="form">
                                         @csrf
@@ -98,10 +102,10 @@
                                 <hr>
                                 <div class="tab-content">
                                     <H4>Các bình luận</H4>
-                                    <div role="tabpanel" class="tab-pane active" id="description">
+                                    <div role="tabpanel" class="form-inline" id="description">
                                         <ul>
                                             @foreach($comments as $comment)
-                                                <li> <b style="color: red">{{$comment->user->name}}</b> - {!! $comment->body !!}</li>
+                                                <li> <b style="color: red">{{$comment->user->name}}</b> : {!! $comment->body !!}</li>
                                             @endforeach
                                         </ul>
                                     </div>
