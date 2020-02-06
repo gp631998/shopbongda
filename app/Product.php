@@ -4,16 +4,22 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
+
 class Product extends Model
 {
-    public function getDataFoodByKeyWord($keyword){
-        $data=DB::table('products')->where('product_name','=',$keyword)->get();
+    public function getDataFoodByKeyWord($keyword)
+    {
+        $data = DB::table('products')->where('product_name', '=', $keyword)->get();
         return $data;
     }
-    public function comments(){
-        return $this ->hasMany('App\Comment');
+
+    public function comments()
+    {
+        return $this->hasMany('App\Comment');
     }
-    public function gallery(){
+
+    public function gallery()
+    {
         return $this->hasOne('App\galleries');
     }
 }

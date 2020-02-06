@@ -1,9 +1,13 @@
 <!DOCTYPE html>
 <!--[if IE]><![endif]-->
-<!--[if lt IE 7 ]> <html lang="en" class="ie6">    <![endif]-->
-<!--[if IE 7 ]>    <html lang="en" class="ie7">    <![endif]-->
-<!--[if IE 8 ]>    <html lang="en" class="ie8">    <![endif]-->
-<!--[if IE 9 ]>    <html lang="en" class="ie9">    <![endif]-->
+<!--[if lt IE 7 ]>
+<html lang="en" class="ie6">    <![endif]-->
+<!--[if IE 7 ]>
+<html lang="en" class="ie7">    <![endif]-->
+<!--[if IE 8 ]>
+<html lang="en" class="ie8">    <![endif]-->
+<!--[if IE 9 ]>
+<html lang="en" class="ie9">    <![endif]-->
 <!--[if (gt IE 9)|!(IE)]><!-->
 <html class="no-js" lang="">
 <head>
@@ -18,8 +22,10 @@
     <link rel="shortcut icon" type="image/x-icon" href="{{asset('assets/frontend/img/logoaobongda.png')}}">
     <!-- Fonts
     ============================================ -->
-    <link href='https://fonts.googleapis.com/css?family=Raleway:400,700,600,500,300,800,900' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Roboto:400,400italic,500,300,300italic,500italic,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Raleway:400,700,600,500,300,800,900' rel='stylesheet'
+          type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,400italic,500,300,300italic,500italic,700'
+          rel='stylesheet' type='text/css'>
 
     <!-- CSS  -->
 
@@ -75,11 +81,11 @@
     ============================================ -->
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
     <link href="{{ asset('assets/frontend/fonts/fontawesome-free-5.11.2-web/css/all.css') }}" rel="stylesheet">
-    <link href="{{ asset('assets/frontend/bootstrap-3.3.7-dist/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/admin/css/bootstrap.min.css') }}" rel="stylesheet">
 
     <!-- responsive CSS
     ============================================ -->
-    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="{{asset('assets/frontend/css/responsive.css')}}">
 
     <script src="js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
@@ -141,6 +147,10 @@
 <!-- main js
 ============================================ -->
 <script type="text/javascript" src="{{ asset('assets/frontend/js/main.js') }}"></script>
+<script type="text/javascript" src="{{ asset('assets/frontend/css/comment.css') }}"></script>
+<script>
+    CKEDITOR.replace( 'txt' );
+</script>
 <script src="{{asset('ckeditor/ckeditor.js')}}"></script>
 </body>
 

@@ -30,7 +30,7 @@
                                     <td class="th-total">{{$item->price*$item->qty}}</td>
                                     <td class="th-delete">
                                         <form action="{{route('remove-item-cart',$item->rowId)}}" method="post">
-                                            <button><i class="fa fa-trash"></i></button>
+                                        <button><i class="fa fa-trash"></i></button>
                                             {{csrf_field()}}
                                         </form>
                                     </td>
@@ -39,8 +39,8 @@
                             @endforeach
                             <tfoot>
                             <tr>
-                                <td colspan="5">Sub total</td>
-                                <td>{{Cart::Subtotal()}}</td>
+                                <td colspan="5">Tổng tiền</td>
+                                <td>{{Cart::Subtotal()}} vnđ</td>
                             </tr>
                             </tfoot>
                         </table>

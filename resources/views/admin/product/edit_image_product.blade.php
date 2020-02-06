@@ -15,7 +15,8 @@
             <table class="table table-bordered">
                 <tr>
                     <th>Product name</th>
-                    <th><input readonly type="text" class="form-control" value="{{$product->product_name}}" name="product_name"></th>
+                    <th><input readonly type="text" class="form-control" value="{{$product->product_name}}"
+                               name="product_name"></th>
                 </tr>
                 <tr>
                     <th>Product image</th>

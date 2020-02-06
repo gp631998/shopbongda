@@ -23,7 +23,8 @@
                     <td><a href="{{route('chi-tiet-don-hang',$order->id)}}" class="btn btn-primary">Xem</a></td>
                     <td>
                         <a href="" class="btn btn-info">Edit</a>
-                        <a onclick="return confirm('mày có muốn xóa không?')" href="{{route('xoa-don-hang',$order->id)}}" class="btn btn-danger">Delete</a>
+                        <a onclick="return confirm('mày có muốn xóa không?')"
+                           href="{{route('xoa-don-hang',$order->id)}}" class="btn btn-danger">Delete</a>
                     </td>
                 </tr>
             @endforeach

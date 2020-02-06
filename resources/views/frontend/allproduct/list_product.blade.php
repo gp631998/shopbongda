@@ -34,26 +34,27 @@
                         </div>
                         <div class="row">
                             @foreach($products as $product)
-                            <div class="col-md-4 col-sm-6">
-                                <div class="single-item-area">
-                                    <div class="single-item">
-                                        <div class="product-item-img">
-                                            <a href="#">
-                                                <img class="clb-image-intro"
-                                                     src="{{url('/')}}/{{$product->product_image_intro}}">
-                                            </a>
+                                <div class="col-md-4">
+                                    <div class="single-product">
+                                        <div class="single-product-img">
+                                            <a href="{{route('showDetail',$product->id)}}"><img class="primary-img"
+                                                                                                src="{{ asset('/'.$product->product_image_intro)}}"></a>
                                         </div>
-                                        <div class="single-item-content">
-                                            <h2><a href="#">{{$product->product_name}}</a></h2>
-                                            <h3>{{$product->price}} đ</h3>
+                                        <div class="single-product-content">
+                                            <div class="product-content-left">
+                                                <h2><a style="font-weight: bold"
+                                                       href="{{route('product-detail',$product->id)}}">MUA
+                                                        HÀNG</a></h2>
+                                                <p>{{$product->product_name}}</p>
+                                            </div>
+                                            <div style="font-size: medium" class="product-content-right pull-right">
+                                                <p>{{$product->price}} đ</p>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="item-action-button fix">
-                                        <a href="{{route('product-detail',$product->id)}}"><i class="fas fa-search-plus"></i> Mua Hàng</a>
                                     </div>
                                 </div>
-                            </div>
-                                @endforeach
+                            @endforeach
+                            //
                         </div>
                     </div>
                 </div>
@@ -71,5 +72,5 @@
             </div>
         </div>
     </div>
-    </div>
+
 @endsection

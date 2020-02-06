@@ -14,7 +14,8 @@
             <table class="table table-bordered">
                 <tr>
                     <th>Product name</th>
-                    <th><input type="text" class="form-control" value="{{$product->product_name}}" name="product_name"></th>
+                    <th><input type="text" class="form-control" value="{{$product->product_name}}" name="product_name">
+                    </th>
                 </tr>
                 <tr>
                     <th>Product image intro</th>
@@ -32,7 +33,8 @@
                                 <optgroup label="{{$category->category_name}}">
                                     @foreach($subcategories as $sub_category)
                                         @if ($sub_category->parent==$category->id)
-                                            <option {{ $product->category_id == $sub_category->id ? " selected " : "" }} value="{{$sub_category->id}}">{{$sub_category->category_name}}</option>
+                                            <option
+                                                {{ $product->category_id == $sub_category->id ? " selected " : "" }} value="{{$sub_category->id}}">{{$sub_category->category_name}}</option>
                                         @endif
                                     @endforeach
                                 </optgroup>
@@ -44,8 +46,8 @@
                     <th>Publish</th>
                     <th>
                         <select name="publish">
-                            <option <?php echo $product->publish==1?' selected ':'' ?> value="1">Yes</option>
-                            <option <?php echo $product->publish==0?' selected ':'' ?> value="0">No</option>
+                            <option <?php echo $product->publish == 1 ? ' selected ' : '' ?> value="1">Yes</option>
+                            <option <?php echo $product->publish == 0 ? ' selected ' : '' ?> value="0">No</option>
                         </select>
                     </th>
                 </tr>
@@ -82,7 +84,8 @@
                 <tr>
                     <th>Full description</th>
                     <th>
-                        <textarea class="form-control" id="full_description" name="full_description">{{$product->full_description}}</textarea>
+                        <textarea class="form-control" id="full_description"
+                                  name="full_description">{{$product->full_description}}</textarea>
                     </th>
                 </tr>
                 <tr>

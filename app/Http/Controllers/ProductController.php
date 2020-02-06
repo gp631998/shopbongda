@@ -33,7 +33,6 @@ class ProductController extends Controller
 
     public function getSearch(Request $request)
     {
-//        dd($request->input('key'));
         $search = Product::where('product_name', 'like', '%' . $request->input('key') . '%')->get();
 
         return view('frontend.search.search', compact('search'));

@@ -13,7 +13,9 @@
 
     <!-- Custom fonts for this template-->
     <link href="{{ asset('assets/admin/vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
 
     <!-- Custom styles for this template-->
     <link href="{{asset('assets/admin/css/sb-admin-2.css')}}" rel="stylesheet">
@@ -40,16 +42,20 @@
         <hr class="sidebar-divider my-0">
 
         <li data-toggle="collapse" data-target="#listproduct" class="collapsed">
-            <a style="color: white" href="{{route('danh-sach-san-pham')}}"><i class="fa fa-globe fa-lg"></i> List Product <span class="arrow"></span></a>
+            <a style="color: white" href="{{route('danh-sach-san-pham')}}"><i class="fa fa-globe fa-lg"></i> List
+                Product <span class="arrow"></span></a>
         </li>
         <li data-toggle="collapse" data-target="#listcategory" class="collapsed">
-            <a style="color: white" href="{{route('list-danh-muc')}}"><i class="fab fa-first-order fa-lg"></i> List Category <span class="arrow"></span></a>
+            <a style="color: white" href="{{route('list-danh-muc')}}"><i class="fab fa-first-order fa-lg"></i> List
+                Category <span class="arrow"></span></a>
         </li>
         <li style="color: white" data-toggle="collapse" data-target="#listcategory" class="collapsed">
-            <a style="color: white" href="{{route('list-don-hang')}}"><i class="fas fa-cube fa-lg"></i> List Order <span class="arrow"></span></a>
+            <a style="color: white" href="{{route('list-don-hang')}}"><i class="fas fa-cube fa-lg"></i> List Order <span
+                    class="arrow"></span></a>
         </li>
         <li style="color: white" data-toggle="collapse" data-target="#listcomment" class="collapsed">
-            <a style="color: white" href="{{route('list-comment')}}"><i class="fas fa-cube fa-lg"></i> List Comment <span class="arrow"></span></a>
+            <a style="color: white" href="{{route('list-comment')}}"><i class="fas fa-cube fa-lg"></i> List Comment
+                <span class="arrow"></span></a>
         </li>
 
         <!-- Divider -->
@@ -84,14 +90,18 @@
 
                     <!-- Nav Item - Search Dropdown (Visible Only XS) -->
                     <li class="nav-item dropdown no-arrow d-sm-none">
-                        <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button"
+                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <i class="fas fa-search fa-fw"></i>
                         </a>
                         <!-- Dropdown - Messages -->
-                        <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in" aria-labelledby="searchDropdown">
+                        <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
+                             aria-labelledby="searchDropdown">
                             <form class="form-inline mr-auto w-100 navbar-search">
                                 <div class="input-group">
-                                    <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
+                                    <input type="text" class="form-control bg-light border-0 small"
+                                           placeholder="Search for..." aria-label="Search"
+                                           aria-describedby="basic-addon2">
                                     <div class="input-group-append">
                                         <button class="btn btn-primary" type="button">
                                             <i class="fas fa-search fa-sm"></i>
@@ -126,7 +136,9 @@
                                     @endif
                                 @else
                                     <li class="nav-item dropdown">
-                                        <a style="color: red" id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                        <a style="color: red" id="navbarDropdown" class="nav-link dropdown-toggle"
+                                           href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
+                                           aria-expanded="false" v-pre>
                                             {{ Auth::user()->name }} <span class="caret"></span>
                                         </a>
 
@@ -137,7 +149,8 @@
                                                 {{ __('Logout') }}
                                             </a>
 
-                                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                            <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                                  style="display: none;">
                                                 @csrf
                                             </form>
                                         </div>
@@ -186,7 +199,8 @@
 </a>
 
 <!-- Logout Modal-->
-<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">

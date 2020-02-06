@@ -14,7 +14,7 @@
                 <th>Sale_price</th>
 
                 <th>Description</th>
-                <th><a href="{{route('them-san-pham')}}" class="btn btn-primary" >Add new</a></th>
+                <th><a href="{{route('them-san-pham')}}" class="btn btn-primary">Add new</a></th>
             </tr>
             </thead>
             <tbody>
@@ -22,7 +22,9 @@
                 <tr>
                     <td>{{$product->id}}</td>
                     <td nowrap="">{{$product->product_name}}</td>
-                    <td><a href="{{route('showDetail',$product->id)}}"><img class="product-image-intro" src="{{ asset('/'.$product->product_image_intro)}}"></a></td>
+                    <td><a href="{{route('showDetail',$product->id)}}"><img class="product-image-intro"
+                                                                            src="{{ asset('/'.$product->product_image_intro)}}"></a>
+                    </td>
                     <td nowrap="">{{$product->publish}}</td>
                     <td nowrap="">{{$product->category_id}}</td>
                     <td nowrap="">{{$product->ordering}}</td>

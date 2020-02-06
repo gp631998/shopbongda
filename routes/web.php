@@ -18,12 +18,12 @@ Auth::routes();
 //++++++++++++++++ FRONTEND ++++++++++++++++++++
 Route::get('/', 'HomeController@index')->name('home');
 //search
-Route::get('search', 'ProductController@getSearch')->name('get.search');
 
+Route::get('search', ['as' =>'search','uses'=> 'ProductController@getSearch']);
 //feed
 Route::get('feedback', 'FeedbackController@index')->name('Feedback');
 Route::get('feedback/add', 'FeedbackController@addFeedback')->name('AddFeedback');
-Route::get('search', ['as' =>'search','uses'=> 'ProductController@getSearch']);
+
 //xoa galery
 Route::get("xoa-galery/{id}", ['as' => 'xoa-galery', 'uses' => 'ProductController@xoaGalery']);
 Route::get('showDetail/{id}', ['as' =>'showDetail','uses'=> 'ProductController@getDetailProduct']);
@@ -49,9 +49,8 @@ Route::post("gioi-thieu",['as'=>'gioi-thieu','uses'=>"CartController@removeItemC
 Route::post("lien-he",['as'=>'lien-he','uses'=>"CartController@removeItemCart"]);
 //TODO làm sau
 Route::get("danh-muc/{id}",['as'=>'danh-muc','uses'=>"ProductController@getProductsById"]);
-//Search
-Route::get('search', 'ProductController@getSearch')->name('get.search');
-Route::get('search', ['as' =>'search','uses'=> 'ProductController@getSearch']);
+
+
 
 
 

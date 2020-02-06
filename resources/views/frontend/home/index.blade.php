@@ -31,6 +31,7 @@
             setTimeout(carousel, 2000); // Change image every 2 seconds
 
         }
+
         // var myIndex1 = 0;
         // carousel1();
         // function carousel1() {
@@ -66,7 +67,9 @@
                                         <div class="col-md-4">
                                             <div class="single-product">
                                                 <div class="single-product-img">
-                                                    <a href="{{route('showDetail',$product->id)}}"><img class="primary-img" src="{{ asset('/'.$product->product_image_intro)}}"></a>
+                                                    <a href="{{route('showDetail',$product->id)}}"><img
+                                                            class="primary-img"
+                                                            src="{{ asset('/'.$product->product_image_intro)}}"></a>
                                                     {{--                                                    <a href="#">--}}
                                                     {{--                                                        <img class="primary-img"--}}
                                                     {{--                                                             src="{{url('/')}}/{{$product->product_image_intro}}"--}}
@@ -80,8 +83,9 @@
                                                                 HÀNG</a></h2>
                                                         <p>{{$product->product_name}}</p>
                                                     </div>
-                                                    <div style="font-size: medium" class="product-content-right pull-right">
-                                                        <p>{{$product->price}} đ</p>
+                                                    <div style="font-size: medium"
+                                                         class="product-content-right pull-right">
+                                                        <p>{{$product->price}} vnđ</p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -99,7 +103,8 @@
                                     <div class="col-md-4">
                                         <div class="single-product">
                                             <div class="single-product-img">
-                                                <a href="{{route('showDetail',$product->id)}}"><img class="primary-img" src="{{ asset('/'.$product->product_image_intro)}}"></a>
+                                                <a href="{{route('showDetail',$product->id)}}"><img class="primary-img"
+                                                                                                    src="{{ asset('/'.$product->product_image_intro)}}"></a>
                                                 {{--                                                <a href="#">--}}
                                                 {{--                                                    <img class="primary-img"--}}
                                                 {{--                                                         src="{{url('/')}}/{{$product->product_image_intro}}"--}}
@@ -113,7 +118,7 @@
                                                     <p>{{$product->product_name}}</p>
                                                 </div>
                                                 <div style="margin-top: 18px" class="product-content-right pull-right">
-                                                    <p>{{$product->price}} đ</p>
+                                                    <p>{{$product->price}} vnđ</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -135,7 +140,8 @@
                                 <div class="col-md-4">
                                     <div class="single-product">
                                         <div class="single-product-img">
-                                            <a href="{{route('showDetail',$product->id)}}"><img class="primary-img" src="{{ asset('/'.$product->product_image_intro)}}"></a>
+                                            <a href="{{route('showDetail',$product->id)}}"><img class="primary-img"
+                                                                                                src="{{ asset('/'.$product->product_image_intro)}}"></a>
                                             {{--                                            <a href="#">--}}
                                             {{--                                                <img class="primary-img"--}}
                                             {{--                                                     src="{{url('/')}}/{{$product->product_image_intro}}" alt="product">--}}
@@ -147,7 +153,7 @@
                                                 <p>{{$product->product_name}}</p>
                                             </div>
                                             <div style="margin-top: 18px" class="product-content-right pull-right">
-                                                <p>{{$product->price}} đ</p>
+                                                <p>{{$product->price}} vnđ</p>
                                             </div>
                                         </div>
                                     </div>

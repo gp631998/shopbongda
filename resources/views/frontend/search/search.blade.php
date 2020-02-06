@@ -13,25 +13,23 @@
                         </div>
                         <div class="row">
                             <div id="product-slider" class="owl-carousel">
+
                                 @foreach($search as $product)
                                     <div class="col-md-4">
                                         <div class="single-product">
                                             <div class="single-product-img">
-                                                <a href="#">
-                                                    <img class="primary-img"
-                                                         src="{{url('/')}}/{{$product->product_image_intro}}"
-                                                         alt="product">
-                                                </a>
+                                                <a href="{{route('showDetail',$product->id)}}"><img class="primary-img"
+                                                                                                    src="{{ asset('/'.$product->product_image_intro)}}"></a>
+
                                             </div>
                                             <div class="single-product-content">
                                                 <div class="product-content-left">
-                                                    <h2><a style="font-weight: bold"
-                                                           href="{{route('product-detail',$product->id)}}">MUA
-                                                            HÀNG</a></h2>
+                                                    <h2><a href="{{route('product-detail',$product->id)}}">MUA HÀNG</a>
+                                                    </h2>
                                                     <p>{{$product->product_name}}</p>
                                                 </div>
                                                 <div style="margin-top: 18px" class="product-content-right pull-right">
-                                                    <p>{{$product->price}} đ</p>
+                                                    <p>{{$product->price}} vnđ</p>
                                                 </div>
                                             </div>
                                         </div>

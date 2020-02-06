@@ -10,11 +10,12 @@
                 </ul>
             </div>
         @endif
-        <form action="{{route('post-sua-danh-muc',$category->id)}}" method="post"  enctype="multipart/form-data">
+        <form action="{{route('post-sua-danh-muc',$category->id)}}" method="post" enctype="multipart/form-data">
             <table class="table  table-bordered">
                 <tr>
                     <th>Category name</th>
-                    <td><input type="text" class="form-control" value="{{$category->category_name}}" name="category_name"></td>
+                    <td><input type="text" class="form-control" value="{{$category->category_name}}"
+                               name="category_name"></td>
                 </tr>
                 <tr>
                     <th>Parent</th>
@@ -22,7 +23,8 @@
                         <select name="parent">
                             <option value="" {{ $category->parent == "" ? " selected" : "" }}>Root</option>
                             @foreach($list_root_category as $item_category)
-                                <option {{ $category->parent == $item_category->id ? " selected " : "" }} value="{{$item_category->id}}">{{$item_category->category_name}}</option>
+                                <option
+                                    {{ $category->parent == $item_category->id ? " selected " : "" }} value="{{$item_category->id}}">{{$item_category->category_name}}</option>
                             @endforeach
                         </select>
                     </td>
@@ -36,7 +38,8 @@
                 </tr>
                 <tr>
                     <th>Description</th>
-                    <td><input type="text" class="form-control" value="{{$category->description}}" name="description"></td>
+                    <td><input type="text" class="form-control" value="{{$category->description}}" name="description">
+                    </td>
                 </tr>
                 <tr>
                     <th>Ordering</th>

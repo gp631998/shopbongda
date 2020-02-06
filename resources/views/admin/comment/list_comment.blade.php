@@ -19,7 +19,8 @@
                     <td style="width: 100px">{{$comment->product->product_name}}</td>
                     <td style="width: 1000px">{!! $comment->body !!}</td>
                     <td>
-                        <a onclick="return confirm('bạn có muốn xóa không?')" href="{{route('xoa-comment',$comment->id)}}" class="btn btn-danger">Delete</a>
+                        <a onclick="return confirm('bạn có muốn xóa không?')"
+                           href="{{route('xoa-comment',$comment->id)}}" class="btn btn-danger">Delete</a>
                     </td>
                 </tr>
             @endforeach

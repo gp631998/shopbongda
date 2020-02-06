@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Comment extends Model
 {
     public $timestamps = false;
+    protected $dateFormat ='d.m.Y H:i:s';
     protected $fillable = [
         'product_id',
         'body',

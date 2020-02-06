@@ -10,7 +10,7 @@
                 <th>Parent id</th>
                 <th>Image</th>
                 <th>Description</th>
-                <th><a href="{{route('them-danh-muc')}}" class="btn btn-primary" >Add category</a></th>
+                <th><a href="{{route('them-danh-muc')}}" class="btn btn-primary">Add category</a></th>
             </tr>
             </thead>
             <tbody>
@@ -21,7 +21,8 @@
                     <td>{{$category->parent}}</td>
                     <td><img class="image-category" src="{{url('/')}}/{{$category->image_category}}"></td>
                     <td>{{$category->description}}</td>
-                    <th><a href="{{route('sua-danh-muc',$category->id)}}" class="btn btn-primary">Edit</a><a href="{{route('xoa-danh-muc',$category->id)}}" class="btn btn-danger">Delete</a></th>
+                    <th><a href="{{route('sua-danh-muc',$category->id)}}" class="btn btn-primary">Edit</a><a
+                            href="{{route('xoa-danh-muc',$category->id)}}" class="btn btn-danger">Delete</a></th>
                 </tr>
             @endforeach
             </tbody>

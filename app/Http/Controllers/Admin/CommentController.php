@@ -9,12 +9,15 @@ use App\Http\Controllers\Controller;
 
 class CommentController extends Controller
 {
-    public function getDeleteComment($id){
+    public function getDeleteComment($id)
+    {
         Comment::find($id)->delete();
         return redirect(route('list-comment'));
     }
-    public function getComment(){
-        $comments=Comment::all();
-        return view('admin.comment.list_comment',compact('comments'));
+
+    public function getComment()
+    {
+        $comments = Comment::all();
+        return view('admin.comment.list_comment', compact('comments'));
     }
 }

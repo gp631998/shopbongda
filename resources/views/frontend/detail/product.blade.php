@@ -13,9 +13,18 @@
                                 <div class="single-tab-img">
                                     <ul class="nav nav-tabs" role="tablist">
 
-                                        <li role="presentation" class="active"><a href="#img-one" role="tab" data-toggle="tab"><img style="width: 100%" class="product-image-intro" src="{{ asset('/'.$product->product_image_intro)}}"></a></li><br>
-                                        <li role="presentation"><a href="#img-two" role="tab" data-toggle="tab"><img style="width: 30%" src="{{ asset('/'.$detailGall->image)}}" alt="tab-img"></a></li>
-                                        <li role="presentation" class="tab-last-li"><a href="#img-three" role="tab" data-toggle="tab"><img style="width: 30%"  src="{{ asset('/'.$detailGall->image1)}}" alt="tab-img"></a></li>
+                                        <li role="presentation" class="active"><a href="#img-one" role="tab"
+                                                                                  data-toggle="tab"><img
+                                                    style="width: 100%" class="product-image-intro"
+                                                    src="{{ asset('/'.$product->product_image_intro)}}"></a></li>
+                                        <br>
+                                        <li role="presentation"><a href="#img-two" role="tab" data-toggle="tab"><img
+                                                    style="width: 30%" src="{{ asset('/'.$detailGall->image)}}"
+                                                    alt="tab-img"></a></li>
+                                        <li role="presentation" class="tab-last-li"><a href="#img-three" role="tab"
+                                                                                       data-toggle="tab"><img
+                                                    style="width: 30%" src="{{ asset('/'.$detailGall->image1)}}"
+                                                    alt="tab-img"></a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -27,7 +36,7 @@
                                         <h3>{{$product->product_name}}</h3>
                                         <div class="prices">
                                             <span class="prices">{{$product->price}}</span>
-                                            <span class="currency"> đ</span>
+                                            <span class="currency"> vnđ</span>
                                         </div>
                                     </div>
                                     <div class="available-option">
@@ -83,7 +92,7 @@
                                     {{--                                    @if(session('thongbao'))--}}
                                     {{--                                        {{session('thongbao')}}--}}
                                     {{--                                    @endif--}}
-                                    <h4>Viết bình luận ...<span class="glyphicon glyphicon-pencil"></span> </h4>
+                                    <h4>Viết bình luận ...<span class="glyphicon glyphicon-pencil"></span></h4>
                                     <form action="" method="post" role="form">
                                         @csrf
                                         <div class="form-group">
@@ -102,13 +111,51 @@
                                 <hr>
                                 <div class="tab-content">
                                     <H4>Các bình luận</H4>
-                                    <div role="tabpanel" class="form-inline" id="description">
-                                        <ul>
+                                    <div>
+                                        <section class="comment-list">
+                                            <!-- First Comment -->
                                             @foreach($comments as $comment)
-                                                <li> <b style="color: red;font-size: 20px">{{$comment->user->name}}</b> : {!! $comment->body !!}</li>
+                                                <article class="row">
+                                                    <div style="width: 200px" class="col-md-4 col-sm-4 hidden-xs">
+                                                        <figure class="thumbnail">
+                                                            <img class="img-responsive"
+                                                                 src="http://www.tangoflooring.ca/wp-content/uploads/2015/07/user-avatar-placeholder.png"/>
+                                                            <figcaption class="text-center">
+
+                                                                <b style="color: red;font-size: 14px">{{$comment->user->name}}</b>
+                                                            </figcaption>
+                                                        </figure>
+                                                    </div>
+                                                    <div class="col-md-8 col-sm-8">
+                                                        <div class="panel panel-default arrow left">
+                                                            <div class="panel-body">
+                                                                <header class="text-left">
+                                                                    <time class="comment-date"><i
+                                                                            class="fa fa-clock-o"></i>{{$comment->created_at}}
+                                                                    </time>
+                                                                </header>
+                                                                <div class="comment-post">
+                                                                    <b style="color: black;font-size: 13px">{{$comment->body}}</b>
+
+                                                                </div>
+                                                                <p class="text-right"><a href="#"
+                                                                                         class="btn btn-default btn-sm"><i
+                                                                            class="fa fa-reply"></i> reply</a></p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </article>
                                             @endforeach
-                                        </ul>
+                                        </section>
                                     </div>
+                                    {{--                                    <div role="tabpanel" class="form-inline" id="description">--}}
+                                    {{--                                        <ul>--}}
+                                    {{--                                            @foreach($comments as $comment)--}}
+                                    {{--                                                <li> <b style="color: red;font-size: 20px">{{$comment->user->name}}</b> : {!! $comment->body !!}</li>--}}
+                                    {{--                                            @endforeach--}}
+
+                                    {{--                                        </ul>--}}
+                                    {{--                                    </div>--}}
 
 
                                 </div>
@@ -130,7 +177,7 @@
 
     </div>
     <script>
-        CKEDITOR.replace( 'txt' );
+        CKEDITOR.replace('txt');
     </script>
     <br>
 @endsection

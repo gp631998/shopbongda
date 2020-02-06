@@ -26,9 +26,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $aoclb_products=DB::table('products')->where('category_id','=',8)->get();
-        $aodoituyen_products=DB::table('products')->where('category_id','=',9)->get();
-        $aologo_products=DB::table('products')->where('category_id','=',10)->get();
-        return view('frontend.home.index',compact('aoclb_products','aodoituyen_products','aologo_products'));
+        $aoclb_products = DB::table('products')->where('category_id', '=', 8)->get();
+        $aodoituyen_products = DB::table('products')->where('category_id', '=', 9)->get();
+        $aologo_products = DB::table('products')->where('category_id', '=', 10)->get();
+        return view('frontend.home.index', compact('aoclb_products', 'aodoituyen_products', 'aologo_products'));
     }
 }
