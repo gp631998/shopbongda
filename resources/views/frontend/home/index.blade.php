@@ -85,7 +85,7 @@
                                                     </div>
                                                     <div style="font-size: medium"
                                                          class="product-content-right pull-right">
-                                                        <p>{{$product->price}} vnđ</p>
+                                                        <p>{{$product->price}} đ</p>
                                                     </div>
                                                 </div>
                                             </div>

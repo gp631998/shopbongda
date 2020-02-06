@@ -79,27 +79,21 @@
                     <div class="review-order">
                         <div class="checkout-head">
                             <h2>XEM LẠI HÓA ĐƠN</h2>
-{{--                        </div>--}}
-{{--                                                <div class="single-review">--}}
-{{--                                                    <div class="single-review-img">--}}
-{{--                                                        <a href="#"><img src="img/checkout.jpg" alt="review"></a>--}}
-{{--                                                    </div>--}}
-{{--                                                    <div class="single-review-content fix">--}}
-{{--                                                        <h2><a href="#">Lorem ipsum dolor sit</a></h2>--}}
-{{--                                                        <p><span>Tên sản pha :</span> Verdigris Red</p>--}}
-{{--                                                        <p><span>Size :</span> L</p>--}}
-{{--                                                        <h3>$150.0</h3>--}}
-{{--                                                    </div>--}}
-{{--                                                </div>--}}
+                        </div>
+                        @foreach(Cart::content() as $product)
+                                                <div class="single-review">
+                                                    <div class="single-review-content fix">
+                                                        <h2><a href="{{route('showDetail',$product->id)}}">Chi tiết sản phẩm bạn đã chọn</a></h2>
+                                                        <p><span>Tên sản phẩm :</span> {{$product->name}} </p>
+                                                        <p><span>Giá tiền :</span> {{$product->price}}</p>
+                                                        @endforeach
+                                                        <p><span>Tổng :</span> {{Cart::subtotal()}}</p>
+
+                                                    </div>
+                                                </div>
 
 
-{{--                                                <div class="subtotal-area">--}}
-{{--                                                    <div class="subtotal-content fix">--}}
-{{--                                                        <h2 class="floatleft">Subtotal</h2>--}}
-{{--                                                        <h2 class="floatright">{{Cart::subtotal()}}</h2>--}}
-{{--                                                    </div>--}}
 
-{{--                                                </div>--}}
                     </div>
                 </div>
             </div>
