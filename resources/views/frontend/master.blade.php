@@ -141,6 +141,7 @@
 <!-- main js
 ============================================ -->
 <script type="text/javascript" src="{{ asset('assets/frontend/js/main.js') }}"></script>
+<script src="{{asset('ckeditor/ckeditor.js')}}"></script>
 </body>
 
 </html>

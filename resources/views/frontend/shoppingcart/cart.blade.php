@@ -8,7 +8,7 @@
                         <table class="col-md-12">
                             <thead>
                             <tr>
-                                <th class="th-product">Product</th>
+                                <th class="th-product">Product </th>
                                 <th class="th-qty">Qty</th>
                                 <th class="th-price">Size</th>
                                 <th class="th-price">Price</th>

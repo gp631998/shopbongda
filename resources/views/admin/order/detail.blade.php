@@ -19,8 +19,8 @@
                     <th>{{$order->id}}</th>
                 </tr>
                 <tr>
-                    <th>Order number</th>
-                    <th>{{$order->order_number}}</th>
+                    <th>Customer Name</th>
+                    <th>{{$order->customer->first_name ." ".$order->customer->last_name}}</th>
                 </tr>
                 <tr>
                     <th>Total</th>

@@ -17,6 +17,17 @@ use Illuminate\Support\Facades\Route;
 Auth::routes();
 //++++++++++++++++ FRONTEND ++++++++++++++++++++
 Route::get('/', 'HomeController@index')->name('home');
+//search
+Route::get('search', 'ProductController@getSearch')->name('get.search');
+
+//feed
+Route::get('feedback', 'FeedbackController@index')->name('Feedback');
+Route::get('feedback/add', 'FeedbackController@addFeedback')->name('AddFeedback');
+Route::get('search', ['as' =>'search','uses'=> 'ProductController@getSearch']);
+//xoa galery
+Route::get("xoa-galery/{id}", ['as' => 'xoa-galery', 'uses' => 'ProductController@xoaGalery']);
+Route::get('showDetail/{id}', ['as' =>'showDetail','uses'=> 'ProductController@getDetailProduct']);
+Route::post('showDetail/{id}','CommentController@comment')->name('post.comment');
 //nút chi tiết sản phẩm
 Route::get("product-detail/{id}",['as'=>'product-detail','uses'=>"ProductController@getDetailProduct"]);
 //chi tiết hình ảnh sản phẩm
@@ -38,15 +49,10 @@ Route::post("gioi-thieu",['as'=>'gioi-thieu','uses'=>"CartController@removeItemC
 Route::post("lien-he",['as'=>'lien-he','uses'=>"CartController@removeItemCart"]);
 //TODO làm sau
 Route::get("danh-muc/{id}",['as'=>'danh-muc','uses'=>"ProductController@getProductsById"]);
-//search
+//Search
 Route::get('search', 'ProductController@getSearch')->name('get.search');
 Route::get('search', ['as' =>'search','uses'=> 'ProductController@getSearch']);
-//xoa galery
-Route::get("xoa-galery/{id}", ['as' => 'xoa-galery', 'uses' => 'ProductController@xoaGalery']);
-Route::get('showDetail/{id}', ['as' =>'showDetail','uses'=> 'ProductController@getDetailProduct']);
-//feedback
-Route::get('feedback', 'FeedbackController@index')->name('Feedback');
-Route::get('feedback/add', 'FeedbackController@addFeedback')->name('AddFeedback');
+
 
 
 //++++++++++++++++ BACKEND +++++++++++++++++++++
@@ -98,7 +104,21 @@ Route::group(['prefix'=>'admin','namespace'=>"Admin","middleware"=>"auth"],funct
         Route::get("chi-tiet-don-hang/{id}", ['as'=>'chi-tiet-don-hang','uses'=>"OrderController@getOrderDetail"]);
         //root/admin/danh-muc/chi-tiet-don-hang
         Route::post("update-order/{id}", ['as' => 'post-edit-order', 'uses' => 'OrderController@updateOrder']);
-        //root/admin/danh-muc/xoa-don-hang
+        //root/admin/danh-muc/xoa-don-ha
         Route::get("xoa-don-hang/{id}", ['as' => 'xoa-don-hang', 'uses' => 'OrderController@getDeleteOrder']);
     });
+    Route::group(['prefix' => 'comment'], function (){
+        //root/admin/danh-muc/list-don-hang
+        Route::get("list-comment", ['as'=>'list-comment','uses'=>"CommentController@getComment"]);
+
+        //root/admin/danh-muc/xoa-don-hang
+        Route::get('xoa-comment/{id}','CommentController@getDeleteComment')->name('xoa-comment');
+    });
+    //đăng nhập các thứ
+    Route::get('/', 'Homecontroller@home');
+    Route::post('/login', 'UserController@postlogin');
+
+    Route::get('/logout', 'UserController@logout');
+
+    Route::get('/admin', 'UserController@admin');
 });

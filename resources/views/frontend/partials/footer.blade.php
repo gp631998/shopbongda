@@ -8,7 +8,7 @@
                         <div class="footer-logo">
                             <a href="{{route('home')}}"><img src="{{asset('assets/frontend/img/logoaobongda.png')}}" alt="logo"></a>
                         </div>
-                        <p>Hệ thống bán lẻ đồ thể thao aobongda là đơn vị chuyên sản xuất và phân phối các sản phẩm thể thao chuyên nghiệp. Tại đây bạn có thể dễ dàng mua Quần áo và dụng cụ thể thao chất lượng cao, chính hãng</p>
+                        <p>Hệ thống bán lẻ đồ thể thao aobongda.net là đơn vị chuyên sản xuất và phân phối các sản phẩm thể thao chuyên nghiệp. Tại đây bạn có thể dễ dàng mua Quần áo và dụng cụ thể thao chất lượng cao, chính hãng</p>
                     </div>
                 </div>
                 <div class="col-md-3 col-sm-6 hidden-sm hidden-xs">
@@ -35,7 +35,7 @@
                                 </div>
                                 <div class="info-content">
                                     <p>0988580741</p>
-                                    <p>0957348892</p>
+                                    <p>0354121536</p>
                                 </div>
                             </div>
                             <div class="contanct-details">
@@ -43,8 +43,8 @@
                                     <i class="far fa-envelope"></i>
                                 </div>
                                 <div class="info-content">
-                                    <p>admin@bootexperts.com</p>
-                                    <p>info@bootexperts.com</p>
+                                    <p>thedai201198@gmail.com</p>
+                                    <p>giangpham060398@gmail.com</p>
                                 </div>
                             </div>
                             <div class="contanct-details">

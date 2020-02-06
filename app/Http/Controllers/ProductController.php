@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Category;
+use App\Comment;
 use App\Galleries;
 use App\Product;
+use App\User;
 use DB;
 use Illuminate\Http\Request;
 
@@ -13,10 +15,13 @@ class ProductController extends Controller
     //
     public function getDetailProduct($id, Request $request)
     {
-        $product = Product::find($id);
-        $detailGall = Galleries::where('product_id', $id)->first();
-        return view('frontend.detail.product', compact('product', 'detailGall'));
+        $product = Product::findOrFail($id);
+        $comments = $product->comments;
+        $detailGall = $product->gallery;
+
+        return view('frontend.detail.product', compact('product', 'detailGall', 'comments'));
     }
+
 
     public function getProductsById($id, Request $request)
     {

@@ -31,8 +31,8 @@
                     <td style="width: 100px">{{$product->description}}</td>
                     <th nowrap="">
                         <a href="{{route('sua-san-pham',$product->id)}}" class="btn btn-primary">Edit</a>
-                        <a href="{{route('xoa-san-pham',$product->id)}}" class="btn btn-primary">Delete</a>
-                        <a href="{{route('list-image',$product->id)}}" class="btn btn-primary">Gallery</a>
+                        <a href="{{route('xoa-san-pham',$product->id)}}" class="btn btn-danger">Delete</a>
+                        <a href="{{route('list-image',$product->id)}}" class="btn btn-info">Gallery</a>
                     </th>
                 </tr>
             @endforeach
