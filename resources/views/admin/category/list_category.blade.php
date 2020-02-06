@@ -5,7 +5,7 @@
         <table class="table table-bordered">
             <thead>
             <tr>
-                <th>Id</th>
+                <th>STT</th>
                 <th>Category name</th>
                 <th>Parent id</th>
                 <th>Image</th>
@@ -16,13 +16,13 @@
             <tbody>
             @foreach($categories as $category)
                 <tr>
-                    <td>{{$category->id}}</td>
+                    <td>{{$loop->iteration}}</td>
                     <td>{{$category->category_name}}</td>
                     <td>{{$category->parent}}</td>
                     <td><img class="image-category" src="{{url('/')}}/{{$category->image_category}}"></td>
                     <td>{{$category->description}}</td>
                     <th><a href="{{route('sua-danh-muc',$category->id)}}" class="btn btn-primary">Edit</a><a
-                            href="{{route('xoa-danh-muc',$category->id)}}" class="btn btn-danger">Delete</a></th>
+                            onclick="return confirm('Bạn có muốn xóa không?')"     href="{{route('xoa-danh-muc',$category->id)}}" class="btn btn-danger">Delete</a></th>
                 </tr>
             @endforeach
             </tbody>

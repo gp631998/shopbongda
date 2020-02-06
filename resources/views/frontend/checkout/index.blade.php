@@ -62,10 +62,7 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <button href="{{route('login')}}" style="margin: 10px"
-                                            class="btn btn-primary pull-right">
-                                        ĐĂNG NHẬP
-                                    </button>
+
                                     <button style="margin: 10px" class="btn btn-primary pull-right">
                                         THANH TOÁN
                                     </button>
@@ -85,9 +82,10 @@
                                                     <div class="single-review-content fix">
                                                         <h2><a href="{{route('showDetail',$product->id)}}">Chi tiết sản phẩm bạn đã chọn</a></h2>
                                                         <p><span>Tên sản phẩm :</span> {{$product->name}} </p>
-                                                        <p><span>Giá tiền :</span> {{$product->price}}</p>
+                                                        <p><span>Bạn đã chọn mua:</span> {{$product->qty}} sản phẩm </p>
+                                                        <p><span>Giá tiền :</span> {{$product->price}} vnđ</p>
                                                         @endforeach
-                                                        <p><span>Tổng :</span> {{Cart::subtotal()}}</p>
+                                                        <p><span>Tổng :</span> {{Cart::subtotal()}} vnđ</p>
 
                                                     </div>
                                                 </div>

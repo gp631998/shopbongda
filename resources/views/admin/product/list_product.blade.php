@@ -4,7 +4,7 @@
         <table class="table table-bordered">
             <thead>
             <tr>
-                <th>Id</th>
+                <th>STT</th>
                 <th>Product name</th>
                 <th>Image</th>
                 <th>Published</th>
@@ -20,7 +20,7 @@
             <tbody>
             @foreach($products as $product)
                 <tr>
-                    <td>{{$product->id}}</td>
+                    <td>{{$loop->iteration}}</td>
                     <td nowrap="">{{$product->product_name}}</td>
                     <td><a href="{{route('showDetail',$product->id)}}"><img class="product-image-intro"
                                                                             src="{{ asset('/'.$product->product_image_intro)}}"></a>
@@ -33,7 +33,7 @@
                     <td style="width: 100px">{{$product->description}}</td>
                     <th nowrap="">
                         <a href="{{route('sua-san-pham',$product->id)}}" class="btn btn-primary">Edit</a>
-                        <a href="{{route('xoa-san-pham',$product->id)}}" class="btn btn-danger">Delete</a>
+                        <a onclick="return confirm('Bạn có muốn xóa không?')" href="{{route('xoa-san-pham',$product->id)}}" class="btn btn-danger">Delete</a>
                         <a href="{{route('list-image',$product->id)}}" class="btn btn-info">Gallery</a>
                     </th>
                 </tr>

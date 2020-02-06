@@ -32,7 +32,7 @@ class OrderController extends Controller
         $order->save();
         Session::flash('message', 'Đã cập nhật đơn hàng thành công');
         $list_product = Orders::getAllProductByOrderId($id);
-        return view('admin.order.detail', compact('order', 'list_product'));
+        return redirect(route('list-don-hang'));
     }
 
     public function getDeleteOrder($id, Request $request)
