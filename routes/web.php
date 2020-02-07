@@ -28,6 +28,7 @@ Route::get('feedback/add', 'FeedbackController@addFeedback')->name('AddFeedback'
 Route::get("xoa-galery/{id}", ['as' => 'xoa-galery', 'uses' => 'ProductController@xoaGalery']);
 Route::get('showDetail/{id}', ['as' =>'showDetail','uses'=> 'ProductController@getDetailProduct']);
 Route::post('showDetail/{id}','CommentController@comment')->name('post.comment');
+Route::post('reply-comment/{comment_id}/{product_id}','CommentController@reply')->name('reply.comment');
 //nút chi tiết sản phẩm
 Route::get("product-detail/{id}",['as'=>'product-detail','uses'=>"ProductController@getDetailProduct"]);
 //chi tiết hình ảnh sản phẩm

@@ -9,16 +9,18 @@ use App\Product;
 use App\User;
 use DB;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 
 class ProductController extends Controller
 {
     //
     public function getDetailProduct($id, Request $request)
     {
-        $product = Product::findOrFail($id);
+        $product = Product::whereId($id)->with(["comments" => function($q){
+            $q->whereNull('reply_id');
+        }])->first();
         $comments = $product->comments;
         $detailGall = $product->gallery;
-
         return view('frontend.detail.product', compact('product', 'detailGall', 'comments'));
     }
 

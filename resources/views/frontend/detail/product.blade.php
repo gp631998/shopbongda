@@ -101,11 +101,7 @@
                                         </div>
                                         <button type="submit" class="btn btn-primary">Gửi</button>
                                     </form>
-                                    {{--                                    @foreach($comment as $item)--}}
-                                    {{--                                        	    //show comment--}}
-                                    {{--                                        	    //or--}}
-                                    {{--                                        	    includes('childrenComments',['childrenComments'=>$item->childrenComments])--}}
-                                    {{--                                        	@foreach--}}
+
 
                                 </div>
                                 <hr>
@@ -136,11 +132,22 @@
                                                                 </header>
                                                                 <div class="comment-post">
                                                                     <b style="color: black;font-size: 13px">{{$comment->body}}</b>
-
+                                                                    <span>{{$comment->getChildren()}}</span>
                                                                 </div>
-                                                                <p class="text-right"><a href="#"
-                                                                                         class="btn btn-default btn-sm"><i
-                                                                            class="fa fa-reply"></i> reply</a></p>
+                                                                @csrf
+
+                                                                <button style="float: right" aria-expanded="false"  class="btn btn-outline-danger"
+                                                                        data-toggle="collapse" data-target="#boxreply">Trả lời</button>
+
+                                                                <div class="collapse mt-4" id="boxreply">
+                                                                    <form action="{{route('reply.comment',['comment_id'=>$comment->id,'product_id'=>$product->id])}}" method="post" role="form">
+                                                                        @csrf
+                                                                    <div class="card card-body bg-warning">
+                                                                        <textarea class="form-control" rows="3" id="body" name="body"></textarea>
+                                                                    </div>
+                                                                    <button type="submit" class="btn btn-primary">Gửi</button>
+                                                                    </form>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -148,24 +155,7 @@
                                             @endforeach
                                         </section>
                                     </div>
-                                    {{--                                    <div role="tabpanel" class="form-inline" id="description">--}}
-                                    {{--                                        <ul>--}}
-                                    {{--                                            @foreach($comments as $comment)--}}
-                                    {{--                                                <li> <b style="color: red;font-size: 20px">{{$comment->user->name}}</b> : {!! $comment->body !!}</li>--}}
-                                    {{--                                            @endforeach--}}
-
-                                    {{--                                        </ul>--}}
-                                    {{--                                    </div>--}}
-
-
                                 </div>
-                                {{--                                @foreach($comment->$item)--}}
-                                {{--                                    <tr class="odd gradex" align="center">--}}
-
-                                {{--                                        <td>{{$comment->body}}</td>--}}
-
-                                {{--                                    </tr>--}}
-                                {{--                                    @endforeach--}}
 
                             </div>
 
@@ -176,7 +166,8 @@
         </div>
 
     </div>
-    <script>
+
+    <script language="javascript">
         CKEDITOR.replace('txt');
     </script>
     <br>
