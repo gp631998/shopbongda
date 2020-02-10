@@ -130,9 +130,37 @@
                                                                             class="fa fa-clock-o"></i>{{$comment->created_at}}
                                                                     </time>
                                                                 </header>
+
                                                                 <div class="comment-post">
                                                                     <b style="color: black;font-size: 13px">{{$comment->body}}</b>
-                                                                    <span>{{$comment->getChildren()}}</span>
+                                                                    //
+                                                                    <ul class="comments-list reply-list">
+                                                                        <li>
+                                                                            <!-- Avatar -->
+
+                                                                            <!-- Contenedor del Comentario -->
+                                                                            <div class="comment-box">
+                                                                                <div class="comment-head">
+                                                                                    <figure class="thumbnail">
+                                                                                        <img class="img-responsive"
+                                                                                             src="http://www.tangoflooring.ca/wp-content/uploads/2015/07/user-avatar-placeholder.png"/>
+                                                                                        <figcaption class="text-center">
+
+                                                                                            <b style="color: red;font-size: 14px">{{$comment->user->name}}</b>
+                                                                                        </figcaption>
+                                                                                    </figure>
+                                                                                    <span>{{$comment->created_at}}</span>
+                                                                                    <i class="fa fa-reply"></i>
+                                                                                    <i class="fa fa-heart"></i>
+                                                                                </div>
+                                                                                <div class="comment-content">
+                                                                                    <span>{{$comment->getChildren()}}</span>
+                                                                                </div>
+                                                                            </div>
+                                                                        </li>
+                                                                    </ul>
+
+
                                                                 </div>
                                                                 @csrf
 

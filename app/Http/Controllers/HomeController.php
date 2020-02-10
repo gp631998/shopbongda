@@ -6,6 +6,7 @@ use App\Product;
 use App\Category;
 use DB;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -26,6 +27,8 @@ class HomeController extends Controller
      */
     public function index()
     {
+//        dd(Auth::user()->type);
+
         $aoclb_products = DB::table('products')->where('category_id', '=', 8)->get();
         $aodoituyen_products = DB::table('products')->where('category_id', '=', 9)->get();
         $aologo_products = DB::table('products')->where('category_id', '=', 10)->get();
