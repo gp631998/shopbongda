@@ -66,6 +66,7 @@
                                     <button style="margin: 10px" class="btn btn-primary pull-right">
                                         THANH TOÁN
                                     </button>
+                                    <button class="btn btn-info">ĐĂNG NHẬP </button>
                                 </div>
                                 {{csrf_field()}}
                             </form>

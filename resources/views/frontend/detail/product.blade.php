@@ -88,22 +88,24 @@
                                         {{session('thongbao')}}
                                     @endif
                                 </div>
-                                <div class="well" id="txt ">
-                                    {{--                                    @if(session('thongbao'))--}}
-                                    {{--                                        {{session('thongbao')}}--}}
-                                    {{--                                    @endif--}}
-                                    <h4>Viết bình luận ...<span class="glyphicon glyphicon-pencil"></span></h4>
-                                    <form action="" method="post" role="form">
-                                        @csrf
-                                        <div class="form-group">
-                                            <textarea class="form-control" rows="3" id="body" name="body"></textarea>
-                                            <input type="hidden" name="product_id" value="{{$product->id}}">
-                                        </div>
-                                        <button type="submit" class="btn btn-primary">Gửi</button>
-                                    </form>
+                               @if(auth()->user())
+                                    <div class="well" id="txt ">
+                                        {{--                                    @if(session('thongbao'))--}}
+                                        {{--                                        {{session('thongbao')}}--}}
+                                        {{--                                    @endif--}}
+                                        <h4>Viết bình luận ...<span class="glyphicon glyphicon-pencil"></span></h4>
+                                        <form action="" method="post" role="form">
+                                            @csrf
+                                            <div class="form-group">
+                                                <textarea class="form-control" rows="3" id="body" name="body"></textarea>
+                                                <input type="hidden" name="product_id" value="{{$product->id}}">
+                                            </div>
+                                            <button type="submit" class="btn btn-primary">Gửi</button>
+                                        </form>
 
 
-                                </div>
+                                    </div>
+                                @endif
                                 <hr>
                                 <div class="tab-content">
                                     <H4>Các bình luận</H4>
@@ -133,34 +135,8 @@
 
                                                                 <div class="comment-post">
                                                                     <b style="color: black;font-size: 13px">{{$comment->body}}</b>
-                                                                    //
-                                                                    <ul class="comments-list reply-list">
-                                                                        <li>
-                                                                            <!-- Avatar -->
 
-                                                                            <!-- Contenedor del Comentario -->
-                                                                            <div class="comment-box">
-                                                                                <div class="comment-head">
-                                                                                    <figure class="thumbnail">
-                                                                                        <img class="img-responsive"
-                                                                                             src="http://www.tangoflooring.ca/wp-content/uploads/2015/07/user-avatar-placeholder.png"/>
-                                                                                        <figcaption class="text-center">
-
-                                                                                            <b style="color: red;font-size: 14px">{{$comment->user->name}}</b>
-                                                                                        </figcaption>
-                                                                                    </figure>
-                                                                                    <span>{{$comment->created_at}}</span>
-                                                                                    <i class="fa fa-reply"></i>
-                                                                                    <i class="fa fa-heart"></i>
-                                                                                </div>
-                                                                                <div class="comment-content">
-                                                                                    <span>{{$comment->getChildren()}}</span>
-                                                                                </div>
-                                                                            </div>
-                                                                        </li>
-                                                                    </ul>
-
-
+                                                                    <span>{{$comment->getChildren()}}</span>
                                                                 </div>
                                                                 @csrf
 

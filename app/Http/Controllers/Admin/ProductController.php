@@ -13,7 +13,8 @@ class ProductController extends Controller
     //
     function getListProduct()
     {
-        $products = Product::orderBy('id', 'DESC')->get();
+        $products = Product::orderBy('id', 'DESC')->paginate(3);
+
         return view('admin.product.list_product', compact('products'));
     }
 

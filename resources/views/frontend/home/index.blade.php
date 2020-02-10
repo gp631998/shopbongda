@@ -118,7 +118,8 @@
                                                     <p>{{$product->product_name}}</p>
                                                 </div>
                                                 <div style="margin-top: 18px" class="product-content-right pull-right">
-                                                    <p>{{$product->price}} vnđ</p>
+
+                                                    <p> <del>{{$product->price}} vnđ  </del> {{$product->sale_price}} vnđ</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -129,7 +130,7 @@
                     </div>
                 </div>
                 <div class="arrivals-area single-add">
-                    <a href="#"> <img style="height: 100px" src="assets/frontend/img/banner/banner.jpg"
+                    <a href="#"> <img style="height: 100px" src="{{asset('assets/frontend/img/banner/banner.jpg')}}"
                                       alt="arrivals"> </a>
                 </div>
                 <div class="product-items">

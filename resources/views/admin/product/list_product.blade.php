@@ -22,7 +22,7 @@
                 <tr>
                     <td>{{$loop->iteration}}</td>
                     <td nowrap="">{{$product->product_name}}</td>
-                    <td><a href="{{route('showDetail',$product->id)}}"><img class="product-image-intro"
+                    <td style="width: 100px"><a  href="{{route('showDetail',$product->id)}}"><img  class="product-image-intro"
                                                                             src="{{ asset('/'.$product->product_image_intro)}}"></a>
                     </td>
                     <td nowrap="">{{$product->publish}}</td>
@@ -40,5 +40,8 @@
             @endforeach
             </tbody>
         </table>
+        <li style="text-align: center; list-style: none">
+        {{ $products->links() }}
+        </li>
     </div>
 @endsection
