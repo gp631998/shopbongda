@@ -114,11 +114,4 @@ Route::group(['prefix'=>'admin','namespace'=>"Admin","middleware"=>"auth"],funct
         //root/admin/danh-muc/xoa-don-hang
         Route::get('xoa-comment/{id}','CommentController@getDeleteComment')->name('xoa-comment');
     });
-    //đăng nhập các thứ
-    Route::get('/', 'Homecontroller@home');
-    Route::post('/login', 'UserController@postlogin');
-
-    Route::get('/logout', 'UserController@logout');
-
-    Route::get('/admin', 'UserController@admin');
 });

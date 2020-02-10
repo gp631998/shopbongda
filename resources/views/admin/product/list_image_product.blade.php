@@ -1,4 +1,4 @@
-@extends('admin.layouts.a')
+@extends('admin.layouts.index')
 @section('content')
     <div class="view-gallery">
         <h3>{{$product->product_name}}</h3>

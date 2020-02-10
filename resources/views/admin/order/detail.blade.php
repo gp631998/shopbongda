@@ -1,4 +1,4 @@
-@extends('admin.layouts.a')
+@extends('admin.layouts.index')
 @section('content')
     @php
         $list_order_status=[
