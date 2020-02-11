@@ -13,6 +13,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Shop bóng đá | Home</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -26,12 +27,16 @@
           type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,400italic,500,300,300italic,500italic,700'
           rel='stylesheet' type='text/css'>
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
     <!-- CSS  -->
 
     <!-- Bootstrap CSS
     ============================================ -->
     <link rel="stylesheet" href="{{asset('assets/frontend/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/frontend/css/a.css')}}">
 
     <!-- font-awesome.min CSS
     ============================================ -->
@@ -88,6 +93,7 @@
     <link rel="stylesheet" href="{{asset('assets/frontend/css/responsive.css')}}">
 
     <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+
 </head>
 <body>
 <!-- HEADER -->
@@ -109,6 +115,9 @@
 <!-- JS -->
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+
 <!-- jquery-1.11.3.min js
 ============================================ -->
 <script type="text/javascript" src="{{ asset('assets/frontend/js/vendor/jquery-1.11.3.min.js') }}"></script>
@@ -147,10 +156,9 @@
 <!-- main js
 ============================================ -->
 <script type="text/javascript" src="{{ asset('assets/frontend/js/main.js') }}"></script>
+<script type="text/javascript" src="{{ asset('assets/frontend/js/main.js') }}"></script>
 <script type="text/javascript" src="{{ asset('assets/frontend/css/comment.css') }}"></script>
-<script>
-    CKEDITOR.replace( 'txt' );
-</script>
+
 <script src="{{asset('ckeditor/ckeditor.js')}}"></script>
 </body>
 

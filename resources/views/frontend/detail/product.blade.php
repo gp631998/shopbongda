@@ -88,7 +88,7 @@
                                         {{session('thongbao')}}
                                     @endif
                                 </div>
-                               @if(auth()->user())
+                                @if(auth()->user())
                                     <div class="well" id="txt ">
                                         {{--                                    @if(session('thongbao'))--}}
                                         {{--                                        {{session('thongbao')}}--}}
@@ -97,8 +97,9 @@
                                         <form action="" method="post" role="form">
                                             @csrf
                                             <div class="form-group">
-                                                <textarea class="form-control" rows="3" id="body" name="body"></textarea>
-                                                <input type="hidden" name="product_id" value="{{$product->id}}">
+                                                <textarea class="form-control" rows="3" id="txt" name="body"></textarea>
+                                                <input id="txt" type="hidden" name="product_id"
+                                                       value="{{$product->id}}">
                                             </div>
                                             <button type="submit" class="btn btn-primary">Gửi</button>
                                         </form>
@@ -107,68 +108,118 @@
                                     </div>
                                 @endif
                                 <hr>
-                                <div class="tab-content">
-                                    <H4>Các bình luận</H4>
-                                    <div>
-                                        <section class="comment-list">
-                                            <!-- First Comment -->
-                                            @foreach($comments as $comment)
-                                                <article class="row">
-                                                    <div style="width: 200px" class="col-md-4 col-sm-4 hidden-xs">
-                                                        <figure class="thumbnail">
-                                                            <img class="img-responsive"
-                                                                 src="http://www.tangoflooring.ca/wp-content/uploads/2015/07/user-avatar-placeholder.png"/>
-                                                            <figcaption class="text-center">
+                                <div class="comment-box-wrapper" style="font-size: 100px ">
+                                    @foreach($comments as $comment)
+                                        <div class="comment-box">
 
-                                                                <b style="color: red;font-size: 14px">{{$comment->user->name}}</b>
-                                                            </figcaption>
-                                                        </figure>
-                                                    </div>
-                                                    <div class="col-md-8 col-sm-8">
-                                                        <div class="panel panel-default arrow left">
-                                                            <div class="panel-body">
-                                                                <header class="text-left">
-                                                                    <time class="comment-date"><i
-                                                                            class="fa fa-clock-o"></i>{{$comment->created_at}}
-                                                                    </time>
-                                                                </header>
+                                            <img class="commenter-image"
+                                                 src="http://www.tangoflooring.ca/wp-content/uploads/2015/07/user-avatar-placeholder.png"/>
+                                            <div class="comment-content">
+                                                <div class="commenter-head"><span style="font-size: 20px "
+                                                                                  class="commenter-name"><a
+                                                            href="">{{$comment->user->name}}</a></span> <span
+                                                        style="font-size: 20px " class="comment-date"><i
+                                                            class="far fa-clock"></i>{{$comment->created_at}}</span>
+                                                </div>
+                                                <div class="comment-body">
+                                                    <span style="font-size: 20px "
+                                                          class="comment">{{$comment->body}}</span>
 
-                                                                <div class="comment-post">
-                                                                    <b style="color: black;font-size: 13px">{{$comment->body}}</b>
+                                                </div>
+                                                <div class="comment-footer">
+                                                    <button style="float: right" aria-expanded="false"
+                                                            class="btn btn-outline-danger"
+                                                            data-toggle="collapse"
+                                                            data-target="#boxreply{{$loop->index}}">Trả lời
+                                                    </button>
+                                                </div>
 
-                                                                    <span>{{$comment->getChildren()}}</span>
-                                                                </div>
-                                                                @csrf
+                                            </div>
 
-                                                                <button style="float: right" aria-expanded="false"  class="btn btn-outline-danger"
-                                                                        data-toggle="collapse" data-target="#boxreply">Trả lời</button>
+                                        </div>
 
-                                                                <div class="collapse mt-4" id="boxreply">
-                                                                    <form action="{{route('reply.comment',['comment_id'=>$comment->id,'product_id'=>$product->id])}}" method="post" role="form">
+                                        @if($comment->getChildren())
+                                            <div class="nested-comments">
+
+                                                <div class="comment-box-wrapper">
+                                                    <div class="comment-box">
+                                                        <img class="commenter-image"
+                                                             src="http://www.tangoflooring.ca/wp-content/uploads/2015/07/user-avatar-placeholder.png"/>
+                                                        <div class="comment-content">
+                                                            <div class="commenter-head"><span style="font-size: 18px"
+                                                                                              class="commenter-name"><a
+                                                                        href="">{{$comment->user->name}}</a></span>
+                                                                <span style="font-size: 18px" class="comment-date"><i
+                                                                        class="far fa-clock"></i>{{$comment->created_at}}</span>
+                                                            </div>
+                                                            <div class="comment-body">
+                                                                <span
+                                                                    style="font-size: 18px">{{$comment->getChildren()}}</span>
+                                                            </div>
+                                                            <div class="comment-footer">
+
+                                                                <div class="collapse mt-4"
+                                                                     id="boxreply{{$loop->index}}">
+                                                                    <form
+                                                                        action="{{route('reply.comment',['comment_id'=>$comment->id,'product_id'=>$product->id])}}"
+                                                                        method="post" role="form">
                                                                         @csrf
-                                                                    <div class="card card-body bg-warning">
-                                                                        <textarea class="form-control" rows="3" id="body" name="body"></textarea>
-                                                                    </div>
-                                                                    <button type="submit" class="btn btn-primary">Gửi</button>
+                                                                        <div class="card card-body bg-warning">
+                                                                            <textarea class="form-control" rows="3"
+                                                                                      id="body" name="body"></textarea>
+                                                                        </div>
+                                                                        <button type="submit" class="btn btn-primary">
+                                                                            Gửi
+                                                                        </button>
+                                                                    </form>
+                                                                </div>
+                                                            </div>
+
+
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        @else
+                                            <div class="nested-comments">
+                                                <div class="comment-box-wrapper">
+                                                    <div class="comment-box">
+                                                        <div class="comment-content" style="background: #fff">
+                                                            <div class="comment-footer">
+                                                                <div class="collapse mt-4"
+                                                                     id="boxreply{{$loop->index}}">
+                                                                    <form
+                                                                        action="{{route('reply.comment',['comment_id'=>$comment->id,'product_id'=>$product->id])}}"
+                                                                        method="post" role="form">
+                                                                        @csrf
+                                                                        <div class="card card-body bg-warning">
+                                                                            <textarea class="form-control" rows="3"
+                                                                                      id="body" name="body"></textarea>
+                                                                        </div>
+                                                                        <button type="submit" class="btn btn-primary">
+                                                                            Gửi
+                                                                        </button>
                                                                     </form>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </article>
-                                            @endforeach
-                                        </section>
-                                    </div>
+                                                </div>
+                                            </div>
+                                        @endif
+                                    @endforeach
                                 </div>
 
-                            </div>
 
+                            </div>
                         </div>
+
                     </div>
+
                 </div>
             </div>
         </div>
-
     </div>
 
     <script language="javascript">

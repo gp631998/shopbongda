@@ -24,7 +24,7 @@ class CommentController extends Controller
         return back()->with('thongbao', 'Bình luận thành công,cảm ơn bạn dã phản hồi !!!!!!');
 //        return view('frontend.detail.product', compact('product', 'detailGall', 'comments'))->with('thongbao', 'Bình luận thành công');
     }
-    public function reply($comment_id,$product_id, Request $request){
+    public function reply(Request $request, $product_id, $comment_id){
         Comment::create([
             'user_id' => auth()->user()->id,
             'reply_id' =>$comment_id,
