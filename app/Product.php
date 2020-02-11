@@ -22,4 +22,14 @@ class Product extends Model
     {
         return $this->hasOne('App\galleries');
     }
+
+    public function getSalePrice()
+    {
+        return $this->price * (100 - $this->sale) / 100;
+    }
+
+    public function getPrice()
+{
+    return $this->sale ? $this->getSalePrice() : $this->price;
+}
 }

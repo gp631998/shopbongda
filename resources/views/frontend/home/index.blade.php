@@ -85,7 +85,8 @@
                                                     </div>
                                                     <div style="font-size: medium"
                                                          class="product-content-right pull-right">
-                                                        <p>{{$product->price}} đ</p>
+                                                        <p><del>{{$product->price}} đ </del> &nbsp;
+                                                        {{$product->getPrice()}} vnđ</p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -119,7 +120,7 @@
                                                 </div>
                                                 <div style="margin-top: 18px" class="product-content-right pull-right">
 
-                                                    <p> <del>{{$product->price}} vnđ  </del> {{$product->sale_price}} vnđ</p>
+                                                    <p> <del>{{$product->price}} vnđ  </del> &nbsp; {{$product->getPrice()}} vnđ</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -154,7 +155,8 @@
                                                 <p>{{$product->product_name}}</p>
                                             </div>
                                             <div style="margin-top: 18px" class="product-content-right pull-right">
-                                                <p>{{$product->price}} vnđ</p>
+                                                <p><del>{{$product->price}} vnđ</del>&nbsp;
+                                                {{$product->getPrice()}} vnđ</p>
                                             </div>
                                         </div>
                                     </div>

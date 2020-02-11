@@ -69,7 +69,7 @@ class CartController extends Controller
     {
         $product = Product::find($id);
         $post = $request->all();
-        $price = $product->price;
+        $price = $product->getPrice();
 //        $size=$product->size;
         Cart::add($id, $product->product_name, $post['quality'], $price);
         return redirect(route('gio-hang'));

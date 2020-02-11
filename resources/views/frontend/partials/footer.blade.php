@@ -69,18 +69,18 @@
                         Copyrignt@2018 <a href="https://freethemescloud.com/" target="_blank">Free themes Cloud </a>/ ALL RIGHTS RESERVED
                     </div>
                 </div>
-{{--                <div class="col-md-6 col-sm-6">--}}
-{{--                    <div class="footer-social-icon">--}}
-{{--                        <ul class="list-inline">--}}
-{{--                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>--}}
-{{--                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>--}}
-{{--                            <li><a href="#"><i class="fa fa-google-plus"></i></a></li>--}}
-{{--                            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>--}}
-{{--                            <li><a href="#"><i class="fa fa-pinterest-p"></i></a></li>--}}
-{{--                            <li><a href="#"><i class="fa fa-vimeo"></i></a></li>--}}
-{{--                        </ul>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
+                <div class="col-md-6 col-sm-6">
+                    <div class="footer-social-icon">
+                        <ul class="list-inline">
+                            <li><a href="https://www.facebook.com/"><i class="fab fa-facebook"></i></a></li>
+                            <li><a href="https://www.twitter.com/"><i class="fab fa-twitter"></i></a></li>
+                            <li><a href="https://www.google-plus.com/"><i class="fab fa-google-plus"></i></a></li>
+                            <li><a href="https://www.linkedin.com/"><i class="fab fa-linkedin"></i></a></li>
+                            <li><a href="https://www.pinterest.com/"><i class="fab fa-pinterest-p"></i></a></li>
+                            <li><a href="https://www.vimeo.com/"><i class="fab fa-vimeo"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

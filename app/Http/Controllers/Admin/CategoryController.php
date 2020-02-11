@@ -19,7 +19,8 @@ class CategoryController extends Controller
 
     function getAddCategory()
     {
-        $list_root_category = DB::table('categories')->where('parent', '=', null)->get();
+        $list_root_category =Category::whereNull('parent')->get();
+//        $list_root_category = DB::table('categories')->where('parent', '=', null)->get();
         $list_sub_category = DB::table('categories')->where('parent', '!=', null)->get();
         return view('admin.category.add_category', compact('list_root_category', 'list_sub_category'));
     }

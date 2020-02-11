@@ -35,7 +35,7 @@
                                     <div class="product-tab-header">
                                         <h3>{{$product->product_name}}</h3>
                                         <div class="prices">
-                                            <span class="prices">{{$product->price}}</span>
+                                            <span class="prices">{{$product->getPrice()}}</span>
                                             <span class="currency"> vnđ</span>
                                         </div>
                                     </div>
@@ -109,7 +109,11 @@
                                 @endif
                                 <hr>
                                 <div class="comment-box-wrapper" style="font-size: 100px ">
+
+                                        <h3>Các bình luận</h3>
+
                                     @foreach($comments as $comment)
+
                                         <div class="comment-box">
 
                                             <img class="commenter-image"
@@ -209,6 +213,7 @@
                                             </div>
                                         @endif
                                     @endforeach
+
                                 </div>
 
 
@@ -224,6 +229,7 @@
 
     <script language="javascript">
         CKEDITOR.replace('txt');
+
     </script>
     <br>
 @endsection

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Galleries;
+use App\Http\Requests\ReplyCommentRequest;
 use App\ReplyComment;
 use Illuminate\Http\Request;
 use App\Comment;
@@ -11,7 +12,7 @@ use Illuminate\Support\Facades\Auth;
 
 class CommentController extends Controller
 {
-    public function comment($id, Request $request)
+    public function comment($id, ReplyCommentRequest $request)
     {
         $product = Product::findOrFail($id);
 
@@ -24,7 +25,8 @@ class CommentController extends Controller
         return back()->with('thongbao', 'Bình luận thành công,cảm ơn bạn dã phản hồi !!!!!!');
 //        return view('frontend.detail.product', compact('product', 'detailGall', 'comments'))->with('thongbao', 'Bình luận thành công');
     }
-    public function reply(Request $request, $product_id, $comment_id){
+    public function reply(ReplyCommentRequest $request, $product_id, $comment_id){
+
         Comment::create([
             'user_id' => auth()->user()->id,
             'reply_id' =>$comment_id,
