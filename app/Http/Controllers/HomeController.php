@@ -20,6 +20,9 @@ class HomeController extends Controller
 //        $this->middleware('auth');
     }
 
+    public  function gioithieu(){
+        return view('frontend.gioithieu');
+    }
     /**
      * Show the application dashboard.
      *

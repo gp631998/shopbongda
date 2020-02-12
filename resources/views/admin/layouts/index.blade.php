@@ -132,6 +132,7 @@
                                     </li>
                                 </ul>
                             </li>
+                            @if(Auth::check())
                             <li>
                                 <a href="{{route('list-danh-muc')}}"><i class="ion-paintbrush text-green"></i> <span class="">Quản lý danh mục</span></a>
                                 <ul class="nav-flyout">
@@ -147,6 +148,7 @@
                                     </li>
                                 </ul>
                             </li>
+                            @endif
                             <li>
                                 <a href="{{route('list-don-hang')}}"><i class="ion-mouse text-yellow"></i> <span class="">Quản lý đơn hàng</span></a>
                                 <ul class="nav-flyout">

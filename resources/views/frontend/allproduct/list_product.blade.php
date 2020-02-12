@@ -54,12 +54,14 @@
                                     </div>
                                 </div>
                             @endforeach
-                            //
+
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
+    <li style="text-align: center; list-style: none">
+        {{ $products->links() }}
+    </li>
 @endsection

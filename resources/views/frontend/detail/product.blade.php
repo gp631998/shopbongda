@@ -80,7 +80,7 @@
                                 <!-- Tab panes -->
                                 <div class="tab-content">
                                     <div role="tabpanel" class="tab-pane active" id="description">
-                                        {{$product->description}}
+                                        {!! $product->description !!}
                                     </div>
                                 </div>
                                 <div style="color: #7dff38" class="well">
@@ -127,7 +127,7 @@
                                                 </div>
                                                 <div class="comment-body">
                                                     <span style="font-size: 20px "
-                                                          class="comment">{{$comment->body}}</span>
+                                                          class="comment">{!! $comment->body !!}</span>
 
                                                 </div>
                                                 <div class="comment-footer">

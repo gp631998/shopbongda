@@ -28,6 +28,9 @@
                             @endforeach
                             <li><a href="{{route('gioi-thieu')}}"> Giới thiệu</a></li>
                             <li><a href="{{route('lien-he')}}"> Liên Hệ</a></li>
+                            @if(Auth::check())
+                            <li><a href="{{route('profile')}}"> Thông tin tài khoản</a></li>
+                                @endif
                         </ul>
                     </nav>
                 </div>

@@ -54,8 +54,12 @@ Route::post("dang-nhap",['as'=>'dang-nhap','uses'=>"CartController@removeItemCar
 Route::post("dang-ky",['as'=>'dang-ky','uses'=>"CartController@removeItemCart"]);
 Route::post("tim-kiem",['as'=>'tim-kiem','uses'=>"CartController@removeItemCart"]);
 //TODO làm sau giới thiệu liên hệ
-Route::post("gioi-thieu",['as'=>'gioi-thieu','uses'=>"CartController@removeItemCart"]);
+Route::get("gioi-thieu",['as'=>'gioi-thieu','uses'=>"HomeController@gioithieu"]);
 Route::post("lien-he",['as'=>'lien-he','uses'=>"CartController@removeItemCart"]);
+
+Route::get("profile",['as'=>'profile','uses'=>"UserController@getprofile"]);
+Route::get("edit-profile",['as'=>'edit-profile','uses'=>"UserController@geteditprofile"]);
+Route::post("edit-profile",['as'=>'update-profile','uses'=>"UserController@getpostprofile"]);
 //TODO làm sau
 Route::get("danh-muc/{id}",['as'=>'danh-muc','uses'=>"ProductController@getProductsById"]);
 
@@ -66,7 +70,7 @@ Route::get("danh-muc/{id}",['as'=>'danh-muc','uses'=>"ProductController@getProdu
 //++++++++++++++++ BACKEND +++++++++++++++++++++
 Route::group(['prefix'=>'admin','namespace'=>"Admin","middleware"=>"auth"],function(){
 
-    Route::group(['middleware'=>'check.user'],function() {
+//    Route::group(['middleware'=>'check.user'],function() {
 
         Route::get('', function () {
             return redirect()->route('danh-sach-san-pham');
@@ -96,8 +100,8 @@ Route::group(['prefix'=>'admin','namespace'=>"Admin","middleware"=>"auth"],funct
         });
 
 
-
-        Route::group(['prefix' => 'danh-muc'], function (){
+//
+        Route::group(['prefix' => 'danh-muc', 'middleware'=>'check.employee'], function (){
             //root/admin/danh-muc/list-danh-muc
             Route::get("list-danh-muc", ['as'=>'list-danh-muc','uses'=>"CategoryController@getListCategory"]);
             //root/admin/danh-muc/them-danh-muc
@@ -131,5 +135,5 @@ Route::group(['prefix'=>'admin','namespace'=>"Admin","middleware"=>"auth"],funct
         });
 
 
-    });
+//    });
 });
