@@ -8,14 +8,20 @@
     <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'>
     <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Lato:300,400,700'>
     <div class="container">
-
+@if(session('lienhe'))
+        <div style="color: #ff151c;" class="well">
+            @if(session('lienhe'))
+                {{session('lienhe')}}
+            @endif
+        </div>
+@endif
         <div class="row">
 
             <div class="col-lg-8 col-lg-offset-2">
 
 
-                <form id="contact-form" method="post" action="" role="form">
-
+                <form id="contact-form" method="post" action=" " role="form">
+@csrf
                     <div class="messages"></div>
 
                     <div class="controls">
@@ -23,15 +29,15 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="form_name">Firstname *</label>
-                                    <input id="form_name" type="text" name="name" class="form-control" placeholder="Please enter your firstname *" required="required" data-error="Firstname is required.">
+                                    <label for="form_first_name">Firstname *</label>
+                                    <input id="form_first_name" type="text" name="first_name" class="form-control" placeholder="Please enter your firstname *" required="required" data-error="first_name is required.">
                                     <div class="help-block with-errors"></div>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="form_lastname">Lastname *</label>
-                                    <input id="form_lastname" type="text" name="surname" class="form-control" placeholder="Please enter your lastname *" required="required" data-error="Lastname is required.">
+                                    <label for="form_last_name">Lastname *</label>
+                                    <input id="form_last_name" type="text" name="last_name" class="form-control" placeholder="Please enter your lastname *" required="required" data-error="last_name is required.">
                                     <div class="help-block with-errors"></div>
                                 </div>
                             </div>

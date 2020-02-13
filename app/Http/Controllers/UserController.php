@@ -32,6 +32,9 @@ class UserController extends Controller
 
         $user->update([
             'password' => Hash::make($request->password),
+            'phone'=> $request->phone,
+
+            'note'=> $request->note,
         ]);
 
 //        $post = $request->all();
@@ -45,6 +48,6 @@ class UserController extends Controller
 //
 //        $user->save();
 
-        return redirect(route('profile'), compact('user'));
+        return view('frontend.user.profile', compact('user'))->with('sua', 'Sửa thành công,cảm ơn bạn  !!!!!!');
     }
 }

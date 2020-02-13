@@ -29,8 +29,6 @@ Route::get('/', 'HomeController@index')->name('home');
 
 Route::get('search', ['as' =>'search','uses'=> 'ProductController@getSearch']);
 //feed
-Route::get('feedback', 'FeedbackController@index')->name('Feedback');
-Route::get('feedback/add', 'FeedbackController@addFeedback')->name('AddFeedback');
 
 //xoa galery
 Route::get("xoa-galery/{id}", ['as' => 'xoa-galery', 'uses' => 'ProductController@xoaGalery']);
@@ -55,6 +53,8 @@ Route::post("dang-ky",['as'=>'dang-ky','uses'=>"CartController@removeItemCart"])
 Route::post("tim-kiem",['as'=>'tim-kiem','uses'=>"CartController@removeItemCart"]);
 //TODO làm sau giới thiệu liên hệ
 Route::get("gioi-thieu",['as'=>'gioi-thieu','uses'=>"HomeController@gioithieu"]);
+Route::get("contact",['as'=>'contact','uses'=>"ContactController@view"]);
+Route::post("contact",['as'=>'contact','uses'=>"ContactController@postcontact"]);
 Route::post("lien-he",['as'=>'lien-he','uses'=>"CartController@removeItemCart"]);
 
 Route::get("profile",['as'=>'profile','uses'=>"UserController@getprofile"]);

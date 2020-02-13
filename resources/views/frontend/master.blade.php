@@ -95,8 +95,8 @@
     <!-- responsive CSS
     ============================================ -->
     <link rel="stylesheet" href="{{asset('assets/frontend/css/responsive.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/frontend/js/lienhe.js')}}">
 
-    <script src="js/vendor/modernizr-2.8.3.min.js"></script>
 
 </head>
 <body>
@@ -114,6 +114,8 @@
 {{--FOOTER --}--}}
 @include('frontend.partials.footer')
 {{-- ENDFOOTER --}}
+
+
 
 
 <!-- JS -->
@@ -164,6 +166,9 @@
 <script type="text/javascript" src="{{ asset('assets/frontend/css/comment.css') }}"></script>
 
 <script src="{{asset('ckeditor/ckeditor.js')}}"></script>
+
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v6.0&appId=232587937746885&autoLogAppEvents=1"></script>
 </body>
 
 </html>

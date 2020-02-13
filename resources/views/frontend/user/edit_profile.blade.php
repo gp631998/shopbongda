@@ -10,6 +10,7 @@
                 </ul>
             </div>
         @endif
+
         <form action="" method="post" enctype="multipart/form-data">
             @csrf
             <table class="table table-bordered">

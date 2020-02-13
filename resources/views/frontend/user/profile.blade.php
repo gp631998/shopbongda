@@ -20,8 +20,13 @@
     @if(Auth::check())
     <div class="row">
         <h2 class="text-danger">Thông tin tài khoản</h2>
-
-
+        @if(session('sua'))
+            <div style="color: #ff151c;" class="well">
+                @if(session('sua'))
+                    {{session('sua')}}
+                @endif
+            </div>
+        @endif
         <table class="table table-bordered success">
             <thead>
             <tr >
@@ -39,10 +44,6 @@
             <tr>
                 <th class="info">Phone</th>
                 <td>{{Auth::user()->phone}}</td>
-            </tr>
-            <tr>
-                <th class="info">Type</th>
-                <td>{{Auth::user()->type}}</td>
             </tr>
 
             <tr>
