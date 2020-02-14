@@ -83,6 +83,7 @@
                                                     <div class="single-review-content fix">
                                                         <h2><a href="{{route('showDetail',$product->id)}}">Chi tiết sản phẩm bạn đã chọn</a></h2>
                                                         <p><span>Tên sản phẩm :</span> {{$product->name}} </p>
+                                                        <p><span>size:</span> {{ ($product->options->has('size') ? $product->options->size : '')}} </p>
                                                         <p><span>Bạn đã chọn mua:</span> {{$product->qty}} sản phẩm </p>
                                                         <p><span>Giá tiền :</span> {{$product->price}} vnđ</p>
                                                         @endforeach
