@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Comment extends Model
 {
     public $timestamps = false;
-    protected $dateFormat ='d.m.Y H:i:s';
+    protected $dateFormat = 'd.m.Y H:i:s';
     protected $fillable = [
         'product_id',
         'reply_id',
@@ -27,15 +27,17 @@ class Comment extends Model
 
     public function user()
     {
-        return $this->belongsTo('App\User');
+        return $this->belongsTo('App\User', 'user_id');
     }
-    public function replycomments(){
+
+    public function replycomments()
+    {
         return $this->hasMany('App\ReplyComment');
     }
 
     public function getChildren()
     {
-        if($this->children) {
+        if ($this->children) {
             return $this->children->body;
         } else {
             return null;

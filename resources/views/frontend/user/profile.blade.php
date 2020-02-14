@@ -45,6 +45,10 @@
                 <th class="info">Phone</th>
                 <td>{{Auth::user()->phone}}</td>
             </tr>
+            <tr>
+                <th class="info">Gender</th>
+                <td>{{Auth::user()->gender}}</td>
+            </tr>
 
             <tr>
                 <th class="info">Note</th>
@@ -53,7 +57,7 @@
             </thead>
 
         </table>
-        <a href="{{route('edit-profile',Auth::user()->id)}}" class="btn btn-primary pull-right">Sửa</a>
+        <a href="{{route('edit-profile',Auth::user()->id)}}" class="btn btn-primary pull-right">Sửa tài khoản</a>
     </div>
 
         @endif

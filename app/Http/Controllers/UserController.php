@@ -29,25 +29,16 @@ class UserController extends Controller
         $user = User::where('id', $id);
 
 
-
         $user->update([
             'password' => Hash::make($request->password),
-            'phone'=> $request->phone,
-
-            'note'=> $request->note,
+            'phone' => $request->phone,
+            'name' => $request->name,
+            'full_name' => $request->full_name,
+            'note' => $request->note,
+            'gender' => $request->gender,
         ]);
 
-//        $post = $request->all();
-//        $request->validate([
-//
-//            'password' => 'required|confirmed',
-//        ]);
-//
-//
-//        $user->password = $post['password'];
-//
-//        $user->save();
 
-        return view('frontend.user.profile', compact('user'))->with('sua', 'Sửa thành công,cảm ơn bạn  !!!!!!');
+        return redirect(route('profile'))->with('sua', 'Sửa thành công,cảm ơn bạn  !!!!!!');
     }
 }

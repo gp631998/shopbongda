@@ -25,7 +25,7 @@
                                     <td class="th-qty">
                                         {{$item->qty}}
                                     </td>
-                                    <td class="th-size">{{$item->size}}</td>
+                                    <td class="th-size">{{$item->options->size }}</td>
                                     <td class="th-price">{{$item->price}}</td>
                                     <td class="th-total">{{$item->price*$item->qty}}</td>
                                     <td class="th-delete">

@@ -54,7 +54,7 @@ class CartController extends Controller
                     'product_id' => $item->id,
                     'order_id' => $order_id,
                     'product_name' => $item->name,
-                    'product_size' => $item->size,
+                    'product_size' => $item->product_size,
                     'product_price' => $item->price,
                     'product_qty' => $item->qty,
                 )
@@ -70,8 +70,15 @@ class CartController extends Controller
         $product = Product::find($id);
         $post = $request->all();
         $price = $product->getPrice();
-//        $size=$product->size;
-        Cart::add($id, $product->product_name, $post['quality'], $price);
+        $product->size=$request->product_size;
+
+        Cart::add([
+            'id' => $id,
+            'name' => $product->product_name,
+            'qty' => $post['quality'],
+            'price' =>$price,
+            'options' => ['size' => $product->size]
+        ]);
         return redirect(route('gio-hang'));
     }
 

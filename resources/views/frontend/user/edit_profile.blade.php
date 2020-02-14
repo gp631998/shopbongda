@@ -11,62 +11,60 @@
             </div>
         @endif
 
-        <form action="" method="post" enctype="multipart/form-data">
-            @csrf
-            <table class="table table-bordered">
-                <tr>
-                    <th>Name</th>
-                    <th><input readonly type="text" class="form-control" value="{{Auth::user()->name}}"
-                               name="name"></th>
-                </tr>
-                <tr>
-                    <th>Full Name</th>
-                    <th>
-                        <input type="text" class="form-control" value="{{Auth::user()->full_name}}" name="full_name">
-                    </th>
-                </tr>
-                <tr>
-                    <th>Email</th>
-                    <th>
-                        <input type="email" class="form-control" value="{{Auth::user()->email}}" name="email">
-                    </th>
-                </tr>
-                <tr>
-                    <th>Phone</th>
-                    <th>
-                        <input type="text" class="form-control" value="{{Auth::user()->phone}}" name="phone">
-                    </th>
-                </tr>
-                <tr>
-                    <th>Note</th>
-                    <th>
-                        <input type="note" class="form-control" value="{{Auth::user()->note}}" name="note">
-                    </th>
-                </tr>
-                <tr>
-                    <th>New Password</th>
-                    <th>
-                        <input type="password" class="form-control"  name="password">
-                    </th>
-                </tr>
-                <tr>
-                    <th>Password Confirm</th>
-                    <th>
-                        <input type="password" class="form-control"  name="password_confirmation">
-                    </th>
-                </tr>
+            <form action="" method="post" enctype="multipart/form-data">
+                @csrf
+                <div class="preview text-center">
+                    <img class="preview-img" src="http://simpleicon.com/wp-content/uploads/account.png" alt="Preview Image" width="200" height="200"/>
+                    <span class="Error"></span>
+                </div>
+                <div class="form-group">
+                    <label>Name:</label>
+                    <input class="form-control" type="text" value="{{Auth::user()->name}}" name="name" required placeholder="Enter Your  Name"/>
+                    <span class="Error"></span>
+                </div>
+                <div class="form-group">
+                    <label>Full Name:</label>
+                    <input class="form-control" type="text" value="{{Auth::user()->full_name}}" name="full_name" required placeholder="Enter Your Full Name"/>
+                    <span class="Error"></span>
+                </div>
+                <div class="form-group">
+                    <label>Email:</label>
+                    <input class="form-control" value="{{Auth::user()->email}}" type="email" name="email" required placeholder="Enter Your Email"/>
+                    <span class="Error"></span>
+                </div>
+                <div class="form-group">
+                    <label>Phone:</label>
+                    <input class="form-control" type="text" value="{{Auth::user()->phone}}" name="phone" required placeholder="Enter Your Phone"/>
+                    <span class="Error"></span>
+                </div>
+                <div class="form-group">
+                    <label>Note:</label>
+                    <input class="form-control" type="text" value="{{Auth::user()->note}}" name="note" required placeholder="Enter Your Note"/>
+                    <span class="Error"></span>
+                </div>
+                <div class="form-group">
+                    <label>Password:</label>
+                    <input class="form-control" type="password" value="{{Auth::user()->password}}" name="password" required placeholder="Enter Password"/>
+                    <span class="Error"></span>
+                </div>
+                <div class="form-group">
+                    <label>Confirm Password:</label>
+                    <input class="form-control" type="password" value="{{Auth::user()->password}}" name="password_confirmation" required placeholder="Enter Password"/>
+                    <span class="Error"></span>
+                </div>
+                <div class="form-group">
+                    <label>Gender:</label><br/>
+                    <label><input type="radio" name="gender" required value="1" checked /> Male</label>
+                    <label><input type="radio" name="gender" required value="2" /> Female</label>
+                    <label><input type="radio" name="gender" required value="3" /> Other</label>
+                    <span class="Error"></span>
+                </div>
+                <div class="form-group">
+                    <input class="btn btn-primary btn-block" type="submit" value="Submit"/>
+                </div>
+                {{csrf_field()}}
+            </form>
 
-                <tr>
-                    <td colspan="3">
-                        <div class="pull-right">
-                            <button type="submit" class="btn btn-primary">Save</button>
-                            <a href="{{route('profile',Auth::user()->id)}}" class="btn btn-primary">Cancel</a>
-                        </div>
-                    </td>
-                </tr>
-            </table>
-            {{csrf_field()}}
-        </form>
         <script type="text/javascript">
             //CKEDITOR.replace( 'full_description' );
         </script>
