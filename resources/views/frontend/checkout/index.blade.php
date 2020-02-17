@@ -63,7 +63,7 @@
                                 </div>
                                 <div class="form-group">
 
-                                    <button style="margin: 10px" class="btn btn-primary pull-right">
+                                    <button onclick="alert('Cảm ơn bạn đã nhập thông tin')" style="margin: 10px" class="btn btn-primary pull-right">
                                         THANH TOÁN
                                     </button>
                                     <button class="btn btn-info">ĐĂNG NHẬP </button>

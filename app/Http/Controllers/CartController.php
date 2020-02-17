@@ -57,6 +57,7 @@ class CartController extends Controller
                     'product_size' => $item->product_size,
                     'product_price' => $item->price,
                     'product_qty' => $item->qty,
+
                 )
             );
         }

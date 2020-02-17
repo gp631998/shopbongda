@@ -60,6 +60,17 @@
                 <div class="col-md-12 col-sm-4">
                     <div class="product-items-area">
                         <div class="product-items">
+                            <div class="dropdown">
+                                <button style="margin-top: 10px;" class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Dropdown button
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="background: #ffffff">
+                                    <a class="dropdown-item" href="{{route('home', 'sx=desc')}}">Cao -> thấp</a>
+                                    <br>
+                                    <a class="dropdown-item" href="{{route('home', 'sx=asc')}}">Thấp - cao</a>
+                                </div>
+                            </div>
+
                             <h2 class="product-header" style="text-align: center">ÁO CÂU LẠC BỘ</h2>
                             <div class="row">
                                 <div id="product-slider" class="owl-carousel">
@@ -85,8 +96,7 @@
                                                     </div>
                                                     <div style="font-size: medium"
                                                          class="product-content-right pull-right">
-                                                        <p><del>{{$product->price}} đ </del> &nbsp;
-                                                        {{$product->getPrice()}} vnđ</p>
+                                                        <p> <del>{{number_format($product->price)}} vnđ  </del> &nbsp; {{number_format($product->getPrice())}} vnđ</p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -120,7 +130,7 @@
                                                 </div>
                                                 <div style="margin-top: 18px" class="product-content-right pull-right">
 
-                                                    <p> <del>{{$product->price}} vnđ  </del> &nbsp; {{$product->getPrice()}} vnđ</p>
+                                                    <p> <del>{{number_format($product->price)}} vnđ  </del> &nbsp; {{number_format($product->getPrice())}} vnđ</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -155,8 +165,7 @@
                                                 <p>{{$product->product_name}}</p>
                                             </div>
                                             <div style="margin-top: 18px" class="product-content-right pull-right">
-                                                <p><del>{{$product->price}} vnđ</del>&nbsp;
-                                                {{$product->getPrice()}} vnđ</p>
+                                                <p> <del>{{number_format($product->price)}} vnđ  </del> &nbsp; {{number_format($product->getPrice())}} vnđ</p>
                                             </div>
                                         </div>
                                     </div>

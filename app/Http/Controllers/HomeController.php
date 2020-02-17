@@ -28,13 +28,22 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index()
+    public function index(Request $request)
     {
-//        dd(Auth::user()->type);
-
-        $aoclb_products = Product::where('category_id', 8)->get();
+      $sx = $request->sx;
+      if (empty($sx)){
+        $aoclb_products = Product::where('category_id', 8)->orderBy('price','ASC')->get();
         $aodoituyen_products = Product::where('category_id',9)->get();
+
         $aologo_products = Product::where('category_id', 10)->get();
-        return view('frontend.home.index', compact('aoclb_products', 'aodoituyen_products', 'aologo_products'));
     }
+
+      else{
+          $aoclb_products = Product::where('category_id', 8)->orderBy('price',$sx)->get();
+          $aodoituyen_products = Product::where('category_id',9)->get();
+          $aologo_products = Product::where('category_id', 10)->get();
+      }
+return view('frontend.home.index', compact('aoclb_products', 'aodoituyen_products', 'aologo_products'));
+    }
+
 }
