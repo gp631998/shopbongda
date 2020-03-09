@@ -8,7 +8,7 @@
                         <table class="col-md-12">
                             <thead>
                             <tr>
-                                <th class="th-product">Product </th>
+                                <th class="th-product">Product</th>
                                 <th class="th-qty">Qty</th>
                                 <th class="th-price">Size</th>
                                 <th class="th-price">Price</th>
@@ -30,7 +30,7 @@
                                     <td class="th-total">{{$item->price*$item->qty}}</td>
                                     <td class="th-delete">
                                         <form action="{{route('remove-item-cart',$item->rowId)}}" method="post">
-                                        <button><i class="fa fa-trash"></i></button>
+                                            <button><i class="fa fa-trash"></i></button>
                                             {{csrf_field()}}
                                         </form>
                                     </td>
@@ -46,7 +46,9 @@
                         </table>
                     </div>
                     <div class="cart-button pull-right">
-                        <a type="button" class="btn btn-primary" href="{{route('thanh-toan')}}">THANH TOÁN</a>
+                        @if(Cart::count() != 0)
+                            <a type="button" class="btn btn-primary" href="{{route('thanh-toan')}}">THANH TOÁN</a>
+                        @endif
                         <a type="button" class="btn btn-primary" href="{{route('home')}}">TIẾP TỤC MUA HÀNG</a>
                     </div>
                 </div>

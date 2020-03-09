@@ -43,7 +43,7 @@ Route::post("add-to-cart/{id}", ['as' => 'add-to-cart', 'uses' => "CartControlle
 //page mua hàng
 Route::get("gio-hang", ['as' => 'gio-hang', 'uses' => "CartController@index"]);
 //thanh toán
-Route::get("thanh-toan", ['as' => 'thanh-toan', 'uses' => "CartController@payNow"]);
+Route::get("thanh-toan", ['as' => 'thanh-toan', 'uses' => "CartController@payNow"])->middleware('check.cart');;
 Route::post("thanh-toan", ['as' => 'thanh-toan', 'uses' => "CartController@postPayNow"]);
 Route::post("remove-item-cart/{id}", ['as' => 'remove-item-cart', 'uses' => "CartController@removeItemCart"]);
 //đăng nhập đăng ký tìm kiếm
@@ -65,7 +65,7 @@ Route::get("danh-muc/{id}", ['as' => 'danh-muc', 'uses' => "ProductController@ge
 
 //++++++++++++++++ BACKEND +++++++++++++++++++++
 Route::group(['prefix' => 'admin', 'namespace' => "Admin", "middleware" => "auth"], function () {
-
+//
     Route::group(['middleware' => 'check.user'], function () {
 
         Route::get('', function () {
